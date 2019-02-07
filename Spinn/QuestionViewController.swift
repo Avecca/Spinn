@@ -28,6 +28,7 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         super.viewDidLoad()
         
         dareQuestionLbl.text = dareQuestionPicker()
+        pointPicker.sizeToFit() //TODO TITTA PÅ DENNA
         
     }
     

@@ -18,6 +18,7 @@
 		937273CC21F0E7DC0011AC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937273CA21F0E7DC0011AC85 /* LaunchScreen.storyboard */; };
 		937273D721F0E7DC0011AC85 /* SpinnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273D621F0E7DC0011AC85 /* SpinnTests.swift */; };
 		937273E221F0E7DC0011AC85 /* SpinnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273E121F0E7DC0011AC85 /* SpinnUITests.swift */; };
+		9377CD48220CA13900DE0400 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377CD47220CA13900DE0400 /* Player.swift */; };
 		93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */; };
 		93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2521FB5C0B000171AA /* SubjectViewController.swift */; };
 		93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF3922088AE800977C28 /* QuestionViewController.swift */; };
@@ -59,6 +60,7 @@
 		937273DD21F0E7DC0011AC85 /* SpinnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpinnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		937273E121F0E7DC0011AC85 /* SpinnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnUITests.swift; sourceTree = "<group>"; };
 		937273E321F0E7DC0011AC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9377CD47220CA13900DE0400 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		93B00C2521FB5C0B000171AA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		93FEBF3922088AE800977C28 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				937273CA21F0E7DC0011AC85 /* LaunchScreen.storyboard */,
 				937273CD21F0E7DC0011AC85 /* Info.plist */,
 				931593ED220B80690006FAA2 /* StylingViewController.swift */,
+				9377CD47220CA13900DE0400 /* Player.swift */,
 			);
 			path = Spinn;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9377CD48220CA13900DE0400 /* Player.swift in Sources */,
 				93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */,
 				932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */,
 				93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */,

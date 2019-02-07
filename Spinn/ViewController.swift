@@ -22,6 +22,9 @@ class ViewController: StylingViewController  {
         
         performSegue(withIdentifier: segueId, sender: self)
     }
+    @IBAction func addPlayer(_ sender: Any) {
+        super.addPlayer(name: "Hanna")
+    }
     
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

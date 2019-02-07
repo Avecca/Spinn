@@ -11,25 +11,46 @@ import UIKit
 class StylingViewController: UIViewController {
     
     let bgColor = #colorLiteral(red: 0.6305440068, green: 0.8406034112, blue: 0.5077832937, alpha: 1)
-
+    var player: Player?
+    var playerArray: [Player] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = bgColor
     
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func addPlayer(name: String)  {
+        
+        if( !playerArray.contains(where: { $0.getName()  == name})) {
+            playerArray.append(Player(name))
+        } else {
+        }
+        
+        for player in playerArray {
+            print(player.getName())
+        }
+        
+    }
+    
+    func addPlayerPoints(playerName: String , points: Int)  {
+ 
+        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
+            
+            playerArray[i].addingPoints(addPoints: points)
+        }
+        
+    }
+    
+    func removePlayer(playerName: String) {
+        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
+            
+            playerArray.remove(at: i)
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
