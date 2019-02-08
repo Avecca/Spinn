@@ -23,6 +23,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     
     
     //connection mellan SubjectCollectionViewCell och här genom namnet subjectCollectionView, hittas genom connectioninspectorn på storyboardet på sidans subjectviewcontroller
+    //tryck på cellen i view controller scene och välj klassen
     @IBOutlet weak var subjectCollectionView: UICollectionView!
     @IBOutlet weak var topicLbl: UILabel!
     

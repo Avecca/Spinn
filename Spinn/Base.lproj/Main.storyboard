@@ -36,27 +36,67 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmX-c4-kdP">
-                                <rect key="frame" x="36" y="411" width="342" height="313"/>
+                                <rect key="frame" x="36" y="413" width="342" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qZB-7K-v5u">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="342" height="46"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j4X-ff-KL9">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="j4X-ff-KL9" customClass="PlayerCollectionViewCell" customModule="Spinn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vak-Sc-FL9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="5" height="46"/>
+                                                    <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-hl-OiR">
+                                                    <rect key="frame" x="312" y="0.0" width="30" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                    <state key="normal" title="X">
+                                                        <color key="titleColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteBtnPressed:" destination="j4X-ff-KL9" eventType="touchUpInside" id="ldV-Ft-0D9"/>
+                                                        <action selector="deletePlayerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gmb-WO-ejV"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="vak-Sc-FL9" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="8QF-WE-Rwd"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="914-TZ-8MW"/>
+                                            <constraint firstAttribute="bottom" secondItem="vak-Sc-FL9" secondAttribute="bottom" id="AUM-mc-q2H"/>
+                                            <constraint firstAttribute="trailing" secondItem="xOg-hl-OiR" secondAttribute="trailing" id="L76-06-EuX"/>
+                                            <constraint firstItem="vak-Sc-FL9" firstAttribute="leading" secondItem="j4X-ff-KL9" secondAttribute="leading" id="SXy-f4-wTR"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="bkz-FZ-jfr"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="cNK-b7-kbM"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="g87-ZQ-nZs"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="smI-M8-5c0"/>
+                                            <constraint firstAttribute="trailing" secondItem="xOg-hl-OiR" secondAttribute="trailing" id="xBq-jb-NaC"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="zSe-QZ-wVS"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="deleteBtn" destination="xOg-hl-OiR" id="bbW-3B-ixW"/>
+                                            <outlet property="nameLbl" destination="vak-Sc-FL9" id="NIL-gX-flL"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="L55-Ze-C6z"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nom-9p-XiU"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-Mg-ekP">
-                                <rect key="frame" x="36" y="756" width="95" height="95"/>
+                                <rect key="frame" x="36" y="765" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="dhC-b3-btz"/>
                                     <constraint firstAttribute="width" constant="95" id="rAK-Vm-9WD"/>
@@ -67,19 +107,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-mf-IZX">
-                                <rect key="frame" x="36" y="859" width="99" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <rect key="frame" x="36.000000000000007" y="868" width="97.666666666666686" height="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5l5-G7-CMH">
-                                <rect key="frame" x="170" y="372" width="74" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="73" id="Jbj-xj-maS"/>
-                                    <constraint firstAttribute="height" constant="28" id="Smp-X6-7nK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="XCy-pv-UwR">
@@ -91,23 +121,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add Player" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-Lb-WtB">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Player" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-Lb-WtB">
                                 <rect key="frame" x="36" y="324" width="342" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="72Q-OJ-569"/>
                                     <constraint firstAttribute="width" constant="342" id="bZs-36-d4c"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T">
                                 <rect key="frame" x="274" y="785" width="104" height="44"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="PLAY!">
                                             <attributes>
-                                                <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="NSColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <font key="NSFont" size="32" name="Rockwell-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -118,10 +148,20 @@
                                     <action selector="rdyToiPlatBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ga0-um-k7y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5l5-G7-CMH">
+                                <rect key="frame" x="36" y="372" width="342" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="Jbj-xj-maS"/>
+                                    <constraint firstAttribute="height" constant="30" id="Smp-X6-7nK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5l5-G7-CMH" firstAttribute="trailing" secondItem="XCy-pv-UwR" secondAttribute="trailing" constant="-134" id="1a2-qC-FCx"/>
+                            <constraint firstItem="5l5-G7-CMH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XCy-pv-UwR" secondAttribute="trailing" id="1a2-qC-FCx"/>
                             <constraint firstAttribute="bottom" secondItem="PCL-mf-IZX" secondAttribute="bottom" constant="11" id="4cM-N8-kt6"/>
                             <constraint firstItem="XCy-pv-UwR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jsK-5C-7vf" secondAttribute="bottom" constant="11" id="8Ox-5E-19V"/>
                             <constraint firstItem="XCy-pv-UwR" firstAttribute="top" secondItem="jsK-5C-7vf" secondAttribute="bottom" constant="45" id="CHT-Kt-ZlU"/>
@@ -149,6 +189,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addPlayerTxtField" destination="gd7-Lb-WtB" id="PXH-sy-p0Q"/>
+                        <outlet property="playerCollectionView" destination="rmX-c4-kdP" id="YhT-xP-omy"/>
                         <segue destination="58T-cz-bc1" kind="show" identifier="segueToSubjectId" id="xgG-Vm-ThZ"/>
                     </connections>
                 </viewController>
@@ -508,6 +550,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="fOX-mO-uJO" kind="unwind" identifier="unwindToStartId" unwindAction="unwindToHereWithSegue:" id="tSv-9D-IIx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

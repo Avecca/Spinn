@@ -35,7 +35,7 @@ class SubjectCollectionViewCell: UICollectionViewCell {
         //Skapa en klass att hålla dessa i istället 30 mins in
     }
 
-    @IBAction func subjectBtnAct(_ sender: Any) {
+    @IBAction func subjectBtnAct(_ sender: Any) { //TODO DETTA BEHÖVS INTE
         print("Cellpress")
         if let text = subjectBtnView.titleLabel?.text { //currentTitle!
             let vc = SubjectViewController()

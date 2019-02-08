@@ -11,7 +11,8 @@ import Foundation
 
 
 
-class Player {
+struct Player {  //TODO använd Struct eller class
+    //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
     private var playerName: String
     private var playerPoints = 0
@@ -24,12 +25,15 @@ class Player {
 //        }
         
         self.playerName = name //validName
+        self.playerPoints = 0
+        
     }
     
     
-    func addingPoints(addPoints: Int) {
+    mutating func addingPoints(addPoints: Int) {
         
-        playerPoints += addPoints        
+        //self.playerPoints += addPoints  //med class
+        self.playerPoints += addPoints //med struct add mutating func
     }
     
     func getName() -> String {

@@ -25,6 +25,7 @@ class StylingViewController: UIViewController {
     func addPlayer(name: String)  {
         
         if( !playerArray.contains(where: { $0.getName()  == name})) {
+            print("Adding player with name \(name)")
             playerArray.append(Player(name))
         } else {
         }
@@ -44,11 +45,35 @@ class StylingViewController: UIViewController {
         
     }
     
-    func removePlayer(playerName: String) {
-        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
-            
-            playerArray.remove(at: i)
+    func removePlayer(index: Int) -> Bool {
+//        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
+//
+//            playerArray.remove(at: i)
+//        }
+        print("Removing Player in Styling")
+        print("Index är \(index)")
+       // let i =
+        for item in playerArray {
+            print(item)
         }
+        
+        
+            playerArray.remove(at: index)
+            print("player removed!")
+            return true
+     
+        
+        
+ 
+    }
+    
+    func nilPlayerArray()  {
+        playerArray.removeAll()
+        
+        if playerArray.isEmpty {
+            print("Arreyen är nollad")
+        }
+        
     }
     
 

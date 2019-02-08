@@ -11,6 +11,7 @@
 		932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DD2207A7920007A8C4 /* ButtonExtension.swift */; };
 		932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DF2207B8580007A8C4 /* SpinnViewController.swift */; };
 		932D74E22207D5C10007A8C4 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74E12207D5C10007A8C4 /* GamePlay.swift */; };
+		935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */; };
 		937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C121F0E7DB0011AC85 /* AppDelegate.swift */; };
 		937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C321F0E7DB0011AC85 /* ViewController.swift */; };
 		937273C721F0E7DB0011AC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937273C521F0E7DB0011AC85 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		932D74DD2207A7920007A8C4 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		932D74DF2207B8580007A8C4 /* SpinnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnViewController.swift; sourceTree = "<group>"; };
 		932D74E12207D5C10007A8C4 /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
+		935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		937273BE21F0E7DB0011AC85 /* Spinn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937273C121F0E7DB0011AC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		937273C321F0E7DB0011AC85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				932D74DD2207A7920007A8C4 /* ButtonExtension.swift */,
 				932D74E12207D5C10007A8C4 /* GamePlay.swift */,
 				93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */,
+				935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */,
 				937273C821F0E7DC0011AC85 /* Assets.xcassets */,
 				937273CA21F0E7DC0011AC85 /* LaunchScreen.storyboard */,
 				937273CD21F0E7DC0011AC85 /* Info.plist */,
@@ -288,6 +291,7 @@
 				932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */,
 				93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */,
 				932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */,
+				935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */,
 				937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */,
 				93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */,
 				937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */,

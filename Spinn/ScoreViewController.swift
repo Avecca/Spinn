@@ -11,6 +11,7 @@ import UIKit
 class ScoreViewController: StylingViewController {
     
     let segId = "unwindToSubjectViewId"
+    let segToStartId = "unwindToStartId"
     var recievingName : String?
     var recievingPoint: Int? //Ta Bort sen!
     
@@ -44,7 +45,19 @@ class ScoreViewController: StylingViewController {
             
             print("NextBtn CLICK!")
         }
-      
+        
+        if segue.identifier == segToStartId {
+            
+            print("Quitting the game")
+            //let vc = segue.destination as! ViewController
+            
+            //vc.nilPlayerArray()
+            super.nilPlayerArray()
+            
+            
+            
+            
+        }
     }
     
     //prepareForUnwind
