@@ -30,7 +30,9 @@
 "owu-UW-mK6.text" = "Label";
 
 /* Class = "UILabel"; text = "Points"; ObjectID = "vYo-KA-ihR"; */
-"vYo-KA-ihR.text" = "Betyg";
+"vYo-KA-ihR.text" = "Betygsätt";
 
 /* Class = "UIButton"; normalTitle = "X"; ObjectID = "xOg-hl-OiR"; */
 "xOg-hl-OiR.normalTitle" = "X";
+
+"QxH-iO-SOx.normalTitle" = "English";

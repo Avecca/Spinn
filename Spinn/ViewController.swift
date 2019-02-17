@@ -17,7 +17,9 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var welcomeLbl: UILabel!
     @IBOutlet weak var playersTitleLbl: UILabel!
-    
+    @IBOutlet weak var langbtn: UIButton!
+    //If adding more languages add them in language.swift as well
+    //var languages: [Language] = [.english, .swedish]
     
     
     override func viewDidLoad() {
@@ -32,16 +34,71 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         addPlayerTxtField.backgroundColor = .white
         addPlayerTxtField.borderStyle = .none
         //addPlayerTxtField.becomeFirstResponder()
-        
+    
         //delegate and datasource for the players collection view
         playerCollectionView.delegate = self
         playerCollectionView.dataSource = self
- 
-
+        
+        
+        //if reload hide or show things again
+        showCorrect()
         
     }
-
     
+    
+    func showCorrect()   {
+        if GamePlay.playerArray.isEmpty {
+            
+            playBtn.isHidden = true
+            playersTitleLbl.isHidden = true
+        } else {
+            playBtn.isHidden = false
+            playersTitleLbl.isHidden = false
+            
+        }
+    }
+    
+
+
+    @IBAction func langBtnPressed(_ sender: Any) {
+        //print(Locale.current.languageCode!)
+        
+        
+         if let switchToLang = (langbtn.titleLabel!.text)?.lowercased()
+         {
+            if switchToLang == "svenska" {
+                Bundle.set(language: Language.svenska)
+            }
+            else{
+                //default engelska
+                Bundle.set(language: Language.english)
+            }
+           // Bundle.set(language: swi)
+            
+            
+            //reload the viewcontroller to reflect the changes
+            let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstViewControllerID")
+            let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+            rootviewcontroller.rootViewController = firstVC
+            
+  
+         }
+        
+       
+        
+//        let path = Bundle.main.path(forResource: "ar", ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//        let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+//        delegate.window?.rootViewController = (storyboard.instantiateInitialViewController())
+        
+        
+    
+ 
+    }
+    
+    
+    //Ready to play dyslexic style!
     @IBAction func rdyToiPlatBtn(_ sender: Any) {
         
         performSegue(withIdentifier: segueId, sender: self)
@@ -64,9 +121,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         }
     }
     
-    func removePlayer(index: Int) {
-        GamePlay.playerArray.remove(at: index)
-    }
+
     
     
     @IBAction func addPlayer(_ sender: Any) { //pressed
@@ -77,26 +132,20 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         addPlayerTxtField.becomeFirstResponder()
     }
     
+    //change the player array
+    func addPlayerToList() {
+        
+        if let player = addPlayerTxtField.text {
+            GamePlay.playerArray.append(Player(player))
+        }
+        
+    }
+    func removePlayer(index: Int) {
+        GamePlay.playerArray.remove(at: index)
+    }
+    
+    
 
-    
-    //segue to next page
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //print("Override händer med \(super.players.playerArray.count) players")
-        print("Override händer med \(GamePlay.playerArray.count) players")
-        
-        let destinationVC = segue.destination as! SubjectViewController
-        destinationVC.recievingName = nil
-    }
-    
-    //return segue
-    @IBAction func unwindToHere(segue: UIStoryboardSegue) {
-       // print("Tillbaka till Start")
-        self.playerCollectionView.reloadData()
-        playBtn.isHidden = true
-        
-    }
-    
     
     //DataSource och delegat for collectionviewn
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -120,8 +169,6 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         
         return cell
     }
-    
-    
     
     
     
@@ -165,7 +212,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                     if( !GamePlay.playerArray.contains(where: { $0.getName()  == addPlayerTxtField.text!})) {
                         //print("Adding player with name \(addPlayerTxtField.text)")
                        
-                        addPlayer()
+                        addPlayerToList()
                         
                     } else {
                         //TODO POPUP KANSSKE?
@@ -182,16 +229,38 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         return true
     }
     
-    func addPlayer() {
+
+    
+    //segue to next page
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let player = addPlayerTxtField.text {
-            GamePlay.playerArray.append(Player(player))
-        }
+        //print("Override händer med \(super.players.playerArray.count) players")
+        print("Override händer med \(GamePlay.playerArray.count) players")
+        
+        let destinationVC = segue.destination as! SubjectViewController
+        destinationVC.recievingName = nil
+    }
+    
+    //return segue
+    @IBAction func unwindToHere(segue: UIStoryboardSegue) {
+        // print("Tillbaka till Start")
+        self.playerCollectionView.reloadData()
+        playBtn.isHidden = true
         
     }
     
     
 }
+
+//
+//extension String {
+//    func localized(_ lang:String) ->String {
+//
+//        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//
+//        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+//    }}
 
 
 
@@ -200,3 +269,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
 //        super.players.removePlayer(index: index)
 //
 //    }
+
+//
+//let lang = "en"
+//let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+//let bundle = Bundle(path: path!)
+//
+//return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")

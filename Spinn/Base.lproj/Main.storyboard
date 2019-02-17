@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Spinn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewControllerID" id="BYZ-38-t0r" customClass="ViewController" customModule="Spinn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +152,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-iO-SOx">
+                                <rect key="frame" x="342" y="44" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Svenska"/>
+                                <connections>
+                                    <action selector="langBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAg-bG-SPw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -184,6 +192,7 @@
                     </view>
                     <connections>
                         <outlet property="addPlayerTxtField" destination="gd7-Lb-WtB" id="PXH-sy-p0Q"/>
+                        <outlet property="langbtn" destination="QxH-iO-SOx" id="zms-cI-HZ3"/>
                         <outlet property="playBtn" destination="xhO-nc-Q3T" id="JV2-8O-hff"/>
                         <outlet property="playerCollectionView" destination="rmX-c4-kdP" id="YhT-xP-omy"/>
                         <outlet property="playersTitleLbl" destination="5l5-G7-CMH" id="EAY-Dm-Gh9"/>
@@ -458,7 +467,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-KA-ihR">
-                                <rect key="frame" x="33" y="435" width="93" height="27"/>
+                                <rect key="frame" x="33" y="435" width="103" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>

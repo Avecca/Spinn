@@ -26,6 +26,8 @@
 		93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2521FB5C0B000171AA /* SubjectViewController.swift */; };
 		93EC96C5221776D2000E490E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EC96C4221776D2000E490E /* QuartzCore.framework */; };
 		93EC96C7221776E8000E490E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EC96C6221776E8000E490E /* AVFoundation.framework */; };
+		93F592C12219F34B0031A27B /* LangExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F592C02219F34B0031A27B /* LangExtension.swift */; };
+		93F592C32219F3AD0031A27B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F592C22219F3AD0031A27B /* Language.swift */; };
 		93F7C0F02214F4D100624871 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */; };
 		93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF3922088AE800977C28 /* QuestionViewController.swift */; };
 		93FEBF3C2208CE2100977C28 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */; };
@@ -77,6 +79,8 @@
 		93B00C2521FB5C0B000171AA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		93EC96C4221776D2000E490E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93EC96C6221776E8000E490E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		93F592C02219F34B0031A27B /* LangExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangExtension.swift; sourceTree = "<group>"; };
+		93F592C22219F3AD0031A27B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		93FEBF3922088AE800977C28 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				932D74DF2207B8580007A8C4 /* SpinnViewController.swift */,
 				93FEBF3922088AE800977C28 /* QuestionViewController.swift */,
 				932D74DD2207A7920007A8C4 /* ButtonExtension.swift */,
+				93F592C02219F34B0031A27B /* LangExtension.swift */,
+				93F592C22219F3AD0031A27B /* Language.swift */,
 				932D74E12207D5C10007A8C4 /* GamePlay.swift */,
 				93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */,
 				935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */,
@@ -316,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F592C12219F34B0031A27B /* LangExtension.swift in Sources */,
 				9377CD48220CA13900DE0400 /* Player.swift in Sources */,
 				93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */,
 				932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */,
@@ -328,6 +335,7 @@
 				93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */,
 				937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */,
 				932D74E22207D5C10007A8C4 /* GamePlay.swift in Sources */,
+				93F592C32219F3AD0031A27B /* Language.swift in Sources */,
 				93FEBF3C2208CE2100977C28 /* ScoreViewController.swift in Sources */,
 				931593EE220B80690006FAA2 /* StylingViewController.swift in Sources */,
 			);

@@ -42,20 +42,51 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         pointPicker.sizeToFit() //TODO TITTA PÅ DENNA
         let defaultPointValue = points.count / 2
         pointPicker.selectRow(defaultPointValue, inComponent: 0, animated: false)
-        
-        
-        
+ 
 //        for i in super.players.playerArray {
 //           print(i.getName())
 //        }
         
         //print(super.players.playerArray)
         
+        //delegate and datasource for picker
         collectionView.delegate = self
         collectionView.dataSource = self
         
+  
+    }
+    
+    
+    //fetch the question/dare
+    func dareQuestionPicker() -> String {
+        
+        //Random fråga med subject och type specifierad
+        
+        let rdm = Int.random(in: 1 ... maxQuestions)
+        
+        var truthDareString = ""
+        
+        //default value sin case something goes wrong
+        if recievingSubject != nil {
+            truthDareString = recievingSubject!
+        } else {
+            truthDareString = defaultSubject
+        }
+        
+        if recievingType != nil {
+            truthDareString += "_\(recievingType!)"
+        }else{
+            truthDareString += defaultType
+        }
         
         
+        truthDareString += "_\(rdm)"
+        
+        //        let truthDareString = "\(recievingSubject! ?? "oppsies_topic")_\(recievingType! ?? "truth")_\(rdm)"
+        
+        
+        return truthDareString
+        //"\(recievingSubject ?? "Romance") : \(recievingType ?? "Truth") : Have you ever peed in the pool?"
     }
     
     
@@ -126,40 +157,6 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         
         
         return cell
-    }
-    
-    
-   
-    //fetch the question/dare
-    func dareQuestionPicker() -> String {
-        
-        //Random fråga med subject och type specifierad
-        
-        let rdm = Int.random(in: 1 ... maxQuestions)
-        
-        var truthDareString = ""
-        
-        //default value sin case something goes wrong
-        if recievingSubject != nil {
-            truthDareString = recievingSubject!
-        } else {
-            truthDareString = defaultSubject
-        }
-        
-        if recievingType != nil {
-            truthDareString += "_\(recievingType!)"
-        }else{
-            truthDareString += defaultType
-        }
-        
-        
-        truthDareString += "_\(rdm)"
-        
-//        let truthDareString = "\(recievingSubject! ?? "oppsies_topic")_\(recievingType! ?? "truth")_\(rdm)"
-        
-        
-        return truthDareString
-        //"\(recievingSubject ?? "Romance") : \(recievingType ?? "Truth") : Have you ever peed in the pool?"
     }
     
     

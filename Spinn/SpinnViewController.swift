@@ -174,14 +174,14 @@ class SpinnViewController: UIViewController {
     
     //Segue to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Testing recieing from cell if \(recievingSubject) is nil")
+        //print("Testing recieing from cell if \(recievingSubject) is nil")
         
          if segue.identifier == segId {
             let btn = sender as! UIButton
             
             let btnType = btn.titleLabel?.text as! String
         
-            print("prepare  \(btnType) is not nil")
+           // print("prepare  \(btnType) is not nil")
             
             let destinationVC = segue.destination as! QuestionViewController
             destinationVC.recievingSubject = recievingSubject
