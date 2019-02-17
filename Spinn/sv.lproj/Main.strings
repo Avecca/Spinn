@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Players"; ObjectID = "5l5-G7-CMH"; */
+"5l5-G7-CMH.text" = "Spelare";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "BrN-Mg-ekP"; */
+"BrN-Mg-ekP.normalTitle" = "Add";
+
+/* Class = "UILabel"; text = "Add Player"; ObjectID = "PCL-mf-IZX"; */
+"PCL-mf-IZX.text" = "Spelare";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V5p-Fw-QQK"; */
+"V5p-Fw-QQK.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "XCy-pv-UwR"; */
+"XCy-pv-UwR.text" = "Välkommen";
+
+/* Class = "UILabel"; text = "or"; ObjectID = "f54-jj-fij"; */
+"f54-jj-fij.text" = "eller";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gRZ-jE-3in"; */
+"gRZ-jE-3in.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Player Name"; ObjectID = "gd7-Lb-WtB"; */
+"gd7-Lb-WtB.placeholder" = "Spelares namn";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mCB-O7-eES"; */
+"mCB-O7-eES.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "owu-UW-mK6"; */
+"owu-UW-mK6.text" = "Label";
+
+/* Class = "UILabel"; text = "Points"; ObjectID = "vYo-KA-ihR"; */
+"vYo-KA-ihR.text" = "Betyg";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "xOg-hl-OiR"; */
+"xOg-hl-OiR.normalTitle" = "X";

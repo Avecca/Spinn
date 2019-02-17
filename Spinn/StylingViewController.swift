@@ -11,70 +11,39 @@ import UIKit
 class StylingViewController: UIViewController {
     
     let bgColor = #colorLiteral(red: 0.6305440068, green: 0.8406034112, blue: 0.5077832937, alpha: 1)
-    var player: Player?
-    var playerArray: [Player] = []
+    let bgColor2 = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+   // static var playersTestArray : [Player] = []// = GamePlay()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = bgColor
+        let layer = CAGradientLayer()
+        layer.frame = view.bounds //hela skärmen
+        //layer.colors?[UIColor.yellow.cgColor,UIColor.green.cgColor]
+        
+        layer.colors = [bgColor2.cgColor, bgColor.cgColor]
+        layer.startPoint = CGPoint(x: 0,y: 0)
+        layer.endPoint = CGPoint(x: 1,y: 1)
+        self.view.layer.insertSublayer(layer, at: 0)
+        
+        //view.backgroundColor = bgColor2
     
     }
     
-    func addPlayer(name: String)  {
-        
-        if( !playerArray.contains(where: { $0.getName()  == name})) {
-            print("Adding player with name \(name)")
-            playerArray.append(Player(name))
-        } else {
-        }
-        
-        for player in playerArray {
-            print(player.getName())
-        }
-        
-    }
-    
-    func addPlayerPoints(playerName: String , points: Int)  {
- 
-        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
-            
-            playerArray[i].addingPoints(addPoints: points)
-        }
-        
-    }
-    
-    func removePlayer(index: Int) -> Bool {
-//        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
-//
-//            playerArray.remove(at: i)
+//    func addPlayer(name: String)  {
+//        
+//        if( !GamePlay.playerArray.contains(where: { $0.getName()  == name})) {
+//            print("Adding player with name \(name)")
+//            GamePlay.playerArray.append(Player(name))
+//        } else {
 //        }
-        print("Removing Player in Styling")
-        print("Index är \(index)")
-       // let i =
-        for item in playerArray {
-            print(item)
-        }
-        
-        
-            playerArray.remove(at: index)
-            print("player removed!")
-            return true
-     
-        
-        
- 
-    }
-    
-    func nilPlayerArray()  {
-        playerArray.removeAll()
-        
-        if playerArray.isEmpty {
-            print("Arreyen är nollad")
-        }
-        
-    }
+//        
+//        for player in GamePlay.playerArray {
+//            print(player.getName())
+//        }
+//        
+//    }
     
 
 

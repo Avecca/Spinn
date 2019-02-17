@@ -14,7 +14,8 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     var recievingName: String?
     let btnFont = "Rockwell-Bold"
     let btnSize = 32
-    var subjectArray  = [("Friendship"),("Romance"),("Mishaps"),("Physical"),("Awkward"),("Oppsies")] //: [String]
+    var subjectArray  = [("friendship_topic"),("romance_topic"),("parties_topic"),("physical_topic"),("psyche_topic"),("oppsies_topic")]
+     //var subjectArray  = [("Friendship"),("Romance"),("Parties"),("Physical"),("Psyche"),("Oppsies")] //: [String]
     var subjectColor : [UIColor] = [(UIColor.blue),(UIColor.red),(UIColor.purple),(UIColor.black),(UIColor.brown),(UIColor.orange)]
  
     let segId = "segueToSpinnId"
@@ -36,8 +37,10 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         subjectCollectionView.dataSource = self
        // print("recieving name is \(recievingName)")
         
+        //print("Subjectsida händer med \(super.players.playerArray.count) players")
+        print("Subjectsida händer med \(GamePlay.playerArray.count) players")
         //If not second time here
-        topicLbl.text = "Choose Topic"
+        topicLbl.text = NSLocalizedString("choose_topic_lbl", comment: "")
         
 
     }
@@ -59,13 +62,13 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         let cellIndex = indexPath.item
         cell.subjectBtnView.isEnabled = true
        
-        cell.subjectBtnView.setTitle(subjectArray[cellIndex], for: .normal )
+       cell.subjectBtnView.setTitle(NSLocalizedString(subjectArray[cellIndex], comment: ""), for: .normal)
         //cell.subjectBtnView.setTitleColor(subjectColor[cellIndex], for: .normal)
         cell.subjectBtnView.setTitleColor((subjectColor[cellIndex]), for: .normal)
         cell.subjectBtnView.titleLabel?.font = UIFont(name: btnFont, size: CGFloat(btnSize))
         cell.subjectBtnView.layer.borderColor = (subjectColor[cellIndex]).cgColor
         cell.subjectBtnView.backgroundColor = UIColor.white
-        cell.tag = cellIndex
+        cell.subjectBtnView.tag = cellIndex
         //cell.accessibilityIdentifier = subjectArray[cellIndex]
         //print("\(cell.tag) as tag")
        // print("\(cell.accessibilityIdentifier)")
@@ -95,31 +98,24 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Testing \(subject) is nil")
+       // print("Testing \(subject) is nil")
       
         if segue.identifier == segId {
             
-            //let index = //self.index(ofAccessibilityElement: sender)
             let cell = sender as! UIButton//UICollectionViewCell
-            //let index = collectionView!.ce
-            //let index = self.collectionView!.indexPathForCell(cell)
-           print(cell)
+            let cellIndex = cell.tag
             
-            //let hmm = cell.accessibilityIdentifier
-           // print("\(hmm) as acess")
-//
-//            if (sender.isKindOfClass(UIButton)){
-//
-//            }
-           // let selectedSubject = subjectArray[index.row]
-            let btnSubject =  cell.titleLabel?.text  as! String //cell.tag
+            let selectedSubject = subjectArray[cellIndex]
+            
+            //let color = cell.currentTitleColor
+            //cell.titleLabel?.text  as! String
             let btnColor = cell.titleColor(for: .normal)
-            print("\(btnColor) btncolor funkar")
-            print("prepare  \(btnSubject) is not nil")
+          //  print("\(btnColor) btncolor funkar")
+         //   print("prepare  \(btnSubject) is not nil")
            // print(selectedSubject)
             
             let destinationVC = segue.destination as! SpinnViewController
-            destinationVC.recievingSubject = btnSubject
+            destinationVC.recievingSubject = selectedSubject
             
             if let color = btnColor{
                 destinationVC.recievingColor = color
@@ -132,14 +128,8 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         print("Tillbaka till SubjectVC")
         
+       //From ScoreViewController, sets recievingname
     }
-    
-    
-    //        //let cell = subjectCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as!  SubjectCollectionViewCell
-       //ubjectCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
-    //
-    //cell.subjectBtnView.setTitle(subjectArray[cellIndex], for: <#T##UIControl.State#>)
-     //cell.subjectBtnView.setTitle(subjectArray[cellIndex], for: <#T##UIControl.State#>)
     
 
 

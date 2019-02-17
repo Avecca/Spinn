@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		931593EE220B80690006FAA2 /* StylingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931593ED220B80690006FAA2 /* StylingViewController.swift */; };
+		9316E8CB2218C28C003BCC95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9316E8CD2218C28C003BCC95 /* Localizable.strings */; };
+		932206DF2217236A00BB020C /* ScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */; };
 		932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DD2207A7920007A8C4 /* ButtonExtension.swift */; };
 		932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DF2207B8580007A8C4 /* SpinnViewController.swift */; };
 		932D74E22207D5C10007A8C4 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74E12207D5C10007A8C4 /* GamePlay.swift */; };
@@ -22,6 +24,9 @@
 		9377CD48220CA13900DE0400 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377CD47220CA13900DE0400 /* Player.swift */; };
 		93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */; };
 		93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2521FB5C0B000171AA /* SubjectViewController.swift */; };
+		93EC96C5221776D2000E490E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EC96C4221776D2000E490E /* QuartzCore.framework */; };
+		93EC96C7221776E8000E490E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EC96C6221776E8000E490E /* AVFoundation.framework */; };
+		93F7C0F02214F4D100624871 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */; };
 		93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF3922088AE800977C28 /* QuestionViewController.swift */; };
 		93FEBF3C2208CE2100977C28 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,11 @@
 
 /* Begin PBXFileReference section */
 		931593ED220B80690006FAA2 /* StylingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingViewController.swift; sourceTree = "<group>"; };
+		9316E8C522189A89003BCC95 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		9316E8C622189A89003BCC95 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9316E8CC2218C28C003BCC95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9316E8CE2218C28E003BCC95 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		932D74DD2207A7920007A8C4 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		932D74DF2207B8580007A8C4 /* SpinnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnViewController.swift; sourceTree = "<group>"; };
 		932D74E12207D5C10007A8C4 /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
@@ -65,6 +75,9 @@
 		9377CD47220CA13900DE0400 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		93B00C2521FB5C0B000171AA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		93EC96C4221776D2000E490E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		93EC96C6221776E8000E490E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		93FEBF3922088AE800977C28 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EC96C7221776E8000E490E /* AVFoundation.framework in Frameworks */,
+				93EC96C5221776D2000E490E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +116,7 @@
 				937273D521F0E7DC0011AC85 /* SpinnTests */,
 				937273E021F0E7DC0011AC85 /* SpinnUITests */,
 				937273BF21F0E7DB0011AC85 /* Products */,
+				93EC96C3221776D2000E490E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +136,8 @@
 				937273C121F0E7DB0011AC85 /* AppDelegate.swift */,
 				937273C321F0E7DB0011AC85 /* ViewController.swift */,
 				937273C521F0E7DB0011AC85 /* Main.storyboard */,
+				932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */,
+				93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */,
 				93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */,
 				93B00C2521FB5C0B000171AA /* SubjectViewController.swift */,
 				932D74DF2207B8580007A8C4 /* SpinnViewController.swift */,
@@ -133,6 +151,7 @@
 				937273CD21F0E7DC0011AC85 /* Info.plist */,
 				931593ED220B80690006FAA2 /* StylingViewController.swift */,
 				9377CD47220CA13900DE0400 /* Player.swift */,
+				9316E8CD2218C28C003BCC95 /* Localizable.strings */,
 			);
 			path = Spinn;
 			sourceTree = "<group>";
@@ -153,6 +172,15 @@
 				937273E321F0E7DC0011AC85 /* Info.plist */,
 			);
 			path = SpinnUITests;
+			sourceTree = "<group>";
+		};
+		93EC96C3221776D2000E490E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93EC96C6221776E8000E490E /* AVFoundation.framework */,
+				93EC96C4221776D2000E490E /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +269,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = 937273B521F0E7DB0011AC85;
 			productRefGroup = 937273BF21F0E7DB0011AC85 /* Products */;
@@ -260,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				937273CC21F0E7DC0011AC85 /* LaunchScreen.storyboard in Resources */,
+				9316E8CB2218C28C003BCC95 /* Localizable.strings in Resources */,
 				937273C921F0E7DC0011AC85 /* Assets.xcassets in Resources */,
 				937273C721F0E7DB0011AC85 /* Main.storyboard in Resources */,
 			);
@@ -290,8 +320,10 @@
 				93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */,
 				932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */,
 				93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */,
+				93F7C0F02214F4D100624871 /* QuestionCollectionViewCell.swift in Sources */,
 				932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */,
 				935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */,
+				932206DF2217236A00BB020C /* ScoreCollectionViewCell.swift in Sources */,
 				937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */,
 				93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */,
 				937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */,
@@ -333,10 +365,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9316E8CD2218C28C003BCC95 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9316E8CC2218C28C003BCC95 /* en */,
+				9316E8CE2218C28E003BCC95 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		937273C521F0E7DB0011AC85 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				937273C621F0E7DB0011AC85 /* Base */,
+				9316E8C522189A89003BCC95 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -345,6 +387,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				937273CB21F0E7DC0011AC85 /* Base */,
+				9316E8C622189A89003BCC95 /* sv */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -356,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -417,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -473,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WXDGSLA2U;
 				INFOPLIST_FILE = Spinn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WXDGSLA2U;
 				INFOPLIST_FILE = Spinn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

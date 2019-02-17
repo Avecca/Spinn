@@ -8,28 +8,75 @@
 
 import UIKit
 
-class ScoreViewController: StylingViewController {
+class ScoreViewController: StylingViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    
     
     let segId = "unwindToSubjectViewId"
     let segToStartId = "unwindToStartId"
     var recievingName : String?
-    var recievingPoint: Int? //Ta Bort sen!
+    var orderedList : [Player] = []
     
-
-    @IBOutlet weak var placeholderLbl: UILabel!
+    @IBOutlet weak var nextBtnPressed: UIButton!
+    @IBOutlet weak var scoreConnectionView : UICollectionView!
+    @IBOutlet weak var quitBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        placeholderLbl.text = "\(recievingName ?? "Name") \(recievingPoint ?? 2 )pts"
-
-        // Do any additional setup after loading the view.
+        scoreConnectionView.delegate = self
+        scoreConnectionView.dataSource = self
+        
+        orderedList = GamePlay.playerArray
+        orderedList.sort(by: { $0.getPoints() > $1.getPoints() })
+        
+        //TODO FIXA NAMNET
+        nextBtnPressed.setTitle(NSLocalizedString("next_btn", comment: "T##String"), for: .normal)
+        quitBtn.setTitle(NSLocalizedString("quit_btn", comment: ""), for: .normal)
+        
+//        for i in orderedList {
+//            print("ordered  \(i)")
+//        }
+//
+//        for i in GamePlay.playerArray {
+//            print("playerarray \(i)")
+//        }
     }
     
     
-    @IBOutlet weak var nextBtnPressed: UIButton!
+
+    
+    //collectionview delegate and datascource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return orderedList.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScoreCollectionViewCell
+        let cellIndex = indexPath.item
+        
+        cell.nameLbl.text = orderedList[cellIndex].getName()
+        cell.scoreLbl.text = "\(orderedList[cellIndex].getPoints()) \(NSLocalizedString("score_pts", comment: "")) "
+        cell.nameLbl.tag = cellIndex
+        cell.scoreLbl.tag = cellIndex
+        
+        if orderedList[cellIndex].getName() == recievingName {
+            cell.nameLbl.textColor = .blue
+            cell.scoreLbl.textColor = .blue
+        }
+        
+        return cell
+    }
     
     
+    //segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == segId {
 //             print("NextBtn CLICK!")
@@ -40,7 +87,7 @@ class ScoreViewController: StylingViewController {
             
             if let name = recievingName{
                 print("Not empty name")
-                destinationVC.topicLbl.text = "\(name) Choose Topic"  
+                destinationVC.topicLbl.text = "\(name) \(NSLocalizedString("choose_topic_lbl", comment: ""))"
             }
             
             print("NextBtn CLICK!")
@@ -52,7 +99,8 @@ class ScoreViewController: StylingViewController {
             //let vc = segue.destination as! ViewController
             
             //vc.nilPlayerArray()
-            super.nilPlayerArray()
+            //super.players.nilPlayerArray()
+            GamePlay.playerArray.removeAll()
             
             
             

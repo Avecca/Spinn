@@ -1,0 +1,168 @@
+/* 
+  Localizable.strings
+  Spinn
+
+  Created by Hanna Astlind on 2019-02-16.
+  Copyright © 2019 Hanna Astlind. All rights reserved.
+*/
+
+"welcome_description" = "Välkommen till Spinn! En version utav snurra flaskan spelet där du betygsätter dina vänners sanningar och våghalsiga handlingar.";
+"play_button" = "SPELA!";
+"choose_topic_lbl" = "Välj Ämne";
+"truth_btn" = "Sanning";
+"dare_btn" = "Konka";
+"spinn" = "Snurra";
+"de_spinn" = "Snurra om";
+"pts" = "a";
+"score_pts" = "p";
+"next_btn" = "Fortsätt";
+"quit_btn" = "< Avsluta";
+"friendship_topic" = "Vänskap";
+"romance_topic" = "Romantik";
+"parties_topic" = "Fest";
+"physical_topic" = "Fysiskt";
+"psyche_topic" = "Mentalt";
+"oppsies_topic" = "Pinsamt";
+
+//friendship truths
+"friendship_topic_truth_1" = "Har du någonsin låtit en vän ta skulden för något du gjort?" ;
+"friendship_topic_truth_2" = "Vad är något som dom flesta av dina vänner vet om dig som är helt fel?";
+"friendship_topic_truth_3" = "Vad har du ljugit om som skadat en vän?";
+"friendship_topic_truth_4" = "Vad är det elakaste du gjort mot en vän som inte förtjänande det?";
+"friendship_topic_truth_5" = "Vilken hemlighet betrodde du en vän som dom sen spred vidare till andra";
+"friendship_topic_truth_6" = "Vad är det dummaste du gjort med en vän?";
+"friendship_topic_truth_7" = "Vad är det elakaste skämtet du spelat någon?";
+"friendship_topic_truth_8" = "Vilket är det skämmigaste smeknanmnet du haft?";
+"friendship_topic_truth_9" = "Vilket är det skämmigaste fotot av dig som en vän har på sin telefon?";
+"friendship_topic_truth_10" = "Vad har du gjort som folket här mest troligt skulle se ned på dig för?";
+//dares
+"friendship_topic_dare_1" = "Välj en vän att dansa med utan musik i en minut.";
+"friendship_topic_dare_2" = "Välj den snällaste personen här och spendera 20 sekunder på att svära åt dom.";
+"friendship_topic_dare_3" = "Låt en vän använda din telefon att skicka ett sms till vem som helst i din kontaktlista.";
+"friendship_topic_dare_4" = "Låt en vän skriva något skämmigt någonstans på din kropp.";
+"friendship_topic_dare_5" = "Få alla personer i din grupp at le! Fortsätt tills alla har lett.";
+"friendship_topic_dare_6" = "Hitta på en 30 sekunders operasång om någon här och gör ett upträdande av att du sjunger den.";
+"friendship_topic_dare_7" = "Låt gruppen titta igenom din mobiltelefon i 2 minuter.";
+"friendship_topic_dare_8" = "Byt kläder med personen du är bäst vän med av alla här i 3 rundor.";
+"friendship_topic_dare_9" = "Välj en person ur gruppen som ger dig en örfil.";
+"friendship_topic_dare_10" = "Smsa en vän något som får dom att le.";
+
+//romance truths
+"romance_topic_truth_1" = "Vem här skulle du helst hångla med?";
+"romance_topic_truth_2" = "Har du varit otrogen eller har någon varit otrogen mot dig?";
+"romance_topic_truth_3" = "Berätta om din pinsamaste date. ";
+"romance_topic_truth_4" = "Berätta om din första kyss.";
+"romance_topic_truth_5" = "Vem ångrar du mest att du kysst?";
+"romance_topic_truth_6" = "Vem ångrar du mest att du INTE kysst?";
+"romance_topic_truth_7" = "Varför tog din senaste relation slut?";
+"romance_topic_truth_8" = "Vem, förutom dig själv, är sexigast här?";
+"romance_topic_truth_9" = "Vem här har den snyggaste rumpan?";
+"romance_topic_truth_10" = "Har du hånglat med någon här?";
+//dares
+"romance_topic_dare_1" = "Förför en person i gruppen som är av samma kön som du.";
+"romance_topic_dare_2" = "Välj en person i gruppen som ger dig smisk.";
+"romance_topic_dare_3" = "Kyss personen som sitter till ditt vänster.";
+"romance_topic_dare_4" = "Byt käder med person i gruppen som är av motsatt kön i 3 rundor.";
+"romance_topic_dare_5" = "Ring din förälskelse och berätta om en sak du tycker om hos dom.";
+"romance_topic_dare_6" = "Smsa din förälskelse ett kort på ditt lillfinger.";
+"romance_topic_dare_7" = "Berätta under 30 sekunder för en person här vad du beundrar hos dom.";
+"romance_topic_dare_8" = "Hylla en person härs sexigaste kroppsdel i 20 sekunder.";
+"romance_topic_dare_9" = "Ge den sexigaste närvarande personen en 'lapdance' utan musik i en minut";
+"romance_topic_dare_10" = "Böna och be personen till ditt höger att inte lämna dig för den där killen eller tjejen. Gråt, hot och jämmer uppmuntras!";
+
+
+//party truths
+"parties_topic_truth_1" = "Har du haft ett så kallat 'wardrobe malfunction'?";
+"parties_topic_truth_2" = "Vem i rummet är enligt dig sämst klädd?";
+"parties_topic_truth_3" = "Berätta om din skämmigaste historia involverande spya och alkohol.";
+"parties_topic_truth_4" = "Om du bara kunde höra en enda disco låt under resten av ditt liv, vilken låt skulle det vara?";
+"parties_topic_truth_5" = "Har du någonsin velat pröva på LARP (Live Action Role-Play)?";
+"parties_topic_truth_6" = "Vad fick du reda på medans du var full som du önskar du kunde glömma?";
+"parties_topic_truth_7" = "Vad är din skämmigaste fyllehistoria?";
+"parties_topic_truth_8" = "Har du låtsats tycka om en gåva? Om så, hur?";
+"parties_topic_truth_9" = "Har du spottat i någons glas?";
+"parties_topic_truth_10" = "Har du festat med något annat än alkohol?";
+//dares
+"parties_topic_dare_1" = "Som kille, sminka dig. Som tjej, tvätta bort ditt smink.";
+"parties_topic_dare_2" = "Lär oss ditt sexigaste danssteg.";
+"parties_topic_dare_3" = "Visa hur du beter dig när du går fram till en kille/tjej på en fest.";
+"parties_topic_dare_4" = "Rekonstruera din senaste flörts reaktion.";
+"parties_topic_dare_5" = "Visa ditt skämmigaste fyllefoto på din telefon.";
+"parties_topic_dare_6" = "Drick en shot av valfri alkohol.";
+"parties_topic_dare_7" = "Bjud personen till höger om dig på en drink.";
+"parties_topic_dare_8" = "Sätt huvudet mellan benen och gå baklänges tills att du träffar någon med rumpan.";
+"parties_topic_dare_9" = "Magdansa som om ditt liv berodde på det.";
+"parties_topic_dare_10" = "Flytta en isbit från din mun till munnen på personen till höger om dig.";
+
+
+//physical truths
+"physical_topic_truth_1" = "Var är det konstigaste stället du kissat på?";
+"physical_topic_truth_2" = "Har du skitigt på dig sen du blev vuxen?";
+"physical_topic_truth_3" = "Har du smakat på en snorkråka, i så fall när sist?";
+"physical_topic_truth_4" = "Vad är det äckligaste som din kropp producerat?";
+"physical_topic_truth_5" = "Derglar du i sömnen?";
+"physical_topic_truth_6" = "Hur skulle du betygsätta ditt eget utseende från 1 till 10?";
+"physical_topic_truth_7" = "Hur skulle du betygsätta personen till vänsters utseende från 1 till 10?";
+"physical_topic_truth_8" = "Skulle du hellre förlora din sexdrift? eller för alltid gå upp 100 kilo?";
+"physical_topic_truth_9" = "Betygsätt dina krippsdelar från bäst till sämst.";
+"physical_topic_truth_10" = "Vad är det äckligaste du haft i munnen?";
+//dares
+"physical_topic_dare_1" = "Spela en låt genom att slå dig själv på skinkorna tills någon gissat rätt låt.";
+"physical_topic_dare_2" = "Slicka golvet.";
+"physical_topic_dare_3" = "Visa alla färgen på dina underkläder.";
+"physical_topic_dare_4" = "Ät en tesked utav den starkaste kryddan som finns i köket.";
+"physical_topic_dare_5" = "Öppna en påse godis eller något liknande med munnen, inga händer eller fötter får hjälpa till.";
+"physical_topic_dare_6" = "Hitta en person var förnamn börjar på samma bokstav som ditt eller närmast bokstav jämnfört med ditt. Slicka deras ansikte.";
+"physical_topic_dare_7" = "Stoppa 4 isbitar i dina byxor.";
+"physical_topic_dare_8" = "Tänk på en sak i ditt rum. Bokstavera saken med din näsa och fortsätt tills någon i gruppen har gissat rätt sak.";
+"physical_topic_dare_9" = "Gör en grimas och behåll den i 2 minuter medans spelet fortsätter.";
+"physical_topic_dare_10" = "Dansa till en sång som gruppen väljer.";
+
+
+//psyche truths
+"psyche_topic_truth_1" = "Vad är du mest besvärad med om dig själv?";
+"psyche_topic_truth_2" = "Vad är din största rädsla?";
+"psyche_topic_truth_3" = "Vad är det mest otäcka du drömt om?";
+"psyche_topic_truth_4" = "Vad är det mest upphetsande du drömt om?";
+"psyche_topic_truth_5" = "Fick du någonsin samtalet om blommor och bin av dina föräldrar?";
+"psyche_topic_truth_6" = "DPratar du i sömnen?";
+"psyche_topic_truth_7" = "Vad tycker du minst om i rummet och varför?";
+"psyche_topic_truth_8" = "Vad ogillar du om mig?";
+"psyche_topic_truth_9" = "Skulle du byta bort dina syskon för 1 miljon?";
+"psyche_topic_truth_10" = "Vad skulle du välja, rädda 100 personer utan att någon visste om det eller inte rädda någon och ha alla berömma dig för det?";
+//dares
+"psyche_topic_dare_1" = "AEfter att gruppen valt ett fult ord ska du sjunga en sång och ha med det ordet i varje mening.";
+"psyche_topic_dare_2" = "Posta en hemsk bild av dig själv till valfri social media.";
+"psyche_topic_dare_3" = "Välj en person från gruppen som ska smiska dig.";
+"psyche_topic_dare_4" = "Var någons husdjur i 5 minuter.";
+"psyche_topic_dare_5" = "Låtsas vara mat, du får inte låtsas äta den, du är maten! Fortsätt med detta tills att någon i rummet lyckats gissa vad det är för mat.";
+"psyche_topic_dare_6" = "Låtsas vara personen till din vänster och ha en konversation med dennas mamma.";
+"psyche_topic_dare_7" = "Låtsas vara av det motsatta könet och flörta med personen på mitt emot dig.";
+"psyche_topic_dare_8" = "Under de nästa 2 rundorna ska du låtsas vara 5 år igen."; 
+"psyche_topic_dare_9" = "Under det nästa 3 rundorna, låtsas vara en katolsk körgosse.";
+"psyche_topic_dare_10" = "Under de nästa 3 rundorna, låtsas vara din egen mamma.";
+
+
+//oppsies truths
+"oppsies_topic_truth_1" = "Vad var det senaste du googlade på i din telefon?";
+"oppsies_topic_truth_2" = "Vad är det mest barnsliga du fortfarande håller på med?";
+"oppsies_topic_truth_3" = "Vad var ditt värsta möte med en polis?";
+"oppsies_topic_truth_4" = "Vad är det mest förödmjukande dina föräldrar ertappat dig göra?";
+"oppsies_topic_truth_5" = "Vad är det värsta tillfället du fisit?";
+"oppsies_topic_truth_6" = "Har du någonsin kissat i en pool?";
+"oppsies_topic_truth_7" = "Berätta om din pinsammaste spy historia.";
+"oppsies_topic_truth_8" = "Vad är din standard sång i duschen?";
+"oppsies_topic_truth_9" = "Du befinner dig på en allmän toalett och gjort nummer 2 när du plötsligt upptäcker att det inte finns något toalettpapper, vad gör du?";
+"oppsies_topic_truth_10" = "Älskar du twiligt i hemlighet?";
+//dares
+"oppsies_topic_dare_1" = "Gå in i badrummet och sätt dina underkläder på huvudet, behåll dem där för resten av spelet.";
+"oppsies_topic_dare_2" = "Ring den sjunde kontakten i din telefonbok och sjung en sång, som gruppen väljer, i 30 sekunder.";
+"oppsies_topic_dare_3" = "Kasta något i toaletten och plocka sedan upp det med handen.";
+"oppsies_topic_dare_4" = "Betygsätt alla i rummet från 1 till 10, där 10 är sen snyggaste.";
+"oppsies_topic_dare_5" = "Ring upp din chef och bjud ut dem på en date.";
+"oppsies_topic_dare_6" = "Härma det djur som är mest lik ditt sätt att äta.";
+"oppsies_topic_dare_7" = "Släpa rumpan på mattan som en hund från ena sidan av rummet till den andra.";
+"oppsies_topic_dare_8" = "Gör 'the Worm'.";
+"oppsies_topic_dare_9" = "Lukta i allas armhålor.";
+"oppsies_topic_dare_10" = "Återskapa ditt senaste 'O' uttryck i 30 sekunder.";
+

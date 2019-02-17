@@ -36,13 +36,13 @@ class SubjectCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func subjectBtnAct(_ sender: Any) { //TODO DETTA BEHÖVS INTE
-        print("Cellpress")
+       // print("Cellpress")
         if let text = subjectBtnView.titleLabel?.text { //currentTitle!
             let vc = SubjectViewController()
             
             vc.subject = text
             
-            print("\(text) is the cell subject")//t("\(text) is the cell subject")
+            //print("\(text) is the cell subject")//t("\(text) is the cell subject")
     
         }
     }
