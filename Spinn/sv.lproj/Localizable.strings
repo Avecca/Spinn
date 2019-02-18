@@ -8,7 +8,7 @@
 
 "welcome_description" = "Välkommen till Spinn! En version utav snurra flaskan spelet där du betygsätter dina vänners sanningar och våghalsiga handlingar.";
 "play_button" = "SPELA!";
-"choose_topic_lbl" = "Välj Ämne";
+"choose_topic_lbl" = "Välj ämne";
 "truth_btn" = "Sanning";
 "dare_btn" = "Konka";
 "spinn" = "Snurra";

@@ -12,7 +12,7 @@
 		932206DF2217236A00BB020C /* ScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */; };
 		932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DD2207A7920007A8C4 /* ButtonExtension.swift */; };
 		932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DF2207B8580007A8C4 /* SpinnViewController.swift */; };
-		932D74E22207D5C10007A8C4 /* GamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74E12207D5C10007A8C4 /* GamePlay.swift */; };
+		932D74E22207D5C10007A8C4 /* EditPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74E12207D5C10007A8C4 /* EditPlayers.swift */; };
 		935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */; };
 		937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C121F0E7DB0011AC85 /* AppDelegate.swift */; };
 		937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C321F0E7DB0011AC85 /* ViewController.swift */; };
@@ -22,6 +22,8 @@
 		937273D721F0E7DC0011AC85 /* SpinnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273D621F0E7DC0011AC85 /* SpinnTests.swift */; };
 		937273E221F0E7DC0011AC85 /* SpinnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273E121F0E7DC0011AC85 /* SpinnUITests.swift */; };
 		9377CD48220CA13900DE0400 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9377CD47220CA13900DE0400 /* Player.swift */; };
+		939A1254221B4D4C00BE7BF0 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 939A1256221B4D4C00BE7BF0 /* flag.png */; };
+		939A1259221B522B00BE7BF0 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A1258221B522B00BE7BF0 /* Players.swift */; };
 		93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */; };
 		93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B00C2521FB5C0B000171AA /* SubjectViewController.swift */; };
 		93EC96C5221776D2000E490E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EC96C4221776D2000E490E /* QuartzCore.framework */; };
@@ -59,7 +61,7 @@
 		932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		932D74DD2207A7920007A8C4 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		932D74DF2207B8580007A8C4 /* SpinnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnViewController.swift; sourceTree = "<group>"; };
-		932D74E12207D5C10007A8C4 /* GamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlay.swift; sourceTree = "<group>"; };
+		932D74E12207D5C10007A8C4 /* EditPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayers.swift; sourceTree = "<group>"; };
 		935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		937273BE21F0E7DB0011AC85 /* Spinn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937273C121F0E7DB0011AC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,9 @@
 		937273E121F0E7DC0011AC85 /* SpinnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnUITests.swift; sourceTree = "<group>"; };
 		937273E321F0E7DC0011AC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9377CD47220CA13900DE0400 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		939A1255221B4D4C00BE7BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/flag.png; sourceTree = "<group>"; };
+		939A1257221B4D5700BE7BF0 /* sv */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sv; path = sv.lproj/flag.png; sourceTree = "<group>"; };
+		939A1258221B522B00BE7BF0 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		93B00C2521FB5C0B000171AA /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		93EC96C4221776D2000E490E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -137,6 +142,7 @@
 		937273C021F0E7DB0011AC85 /* Spinn */ = {
 			isa = PBXGroup;
 			children = (
+				939A1251221B4A0200BE7BF0 /* images */,
 				937273C121F0E7DB0011AC85 /* AppDelegate.swift */,
 				937273C321F0E7DB0011AC85 /* ViewController.swift */,
 				937273C521F0E7DB0011AC85 /* Main.storyboard */,
@@ -149,7 +155,7 @@
 				932D74DD2207A7920007A8C4 /* ButtonExtension.swift */,
 				93F592C02219F34B0031A27B /* LangExtension.swift */,
 				93F592C22219F3AD0031A27B /* Language.swift */,
-				932D74E12207D5C10007A8C4 /* GamePlay.swift */,
+				932D74E12207D5C10007A8C4 /* EditPlayers.swift */,
 				93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */,
 				935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */,
 				937273C821F0E7DC0011AC85 /* Assets.xcassets */,
@@ -157,6 +163,7 @@
 				937273CD21F0E7DC0011AC85 /* Info.plist */,
 				931593ED220B80690006FAA2 /* StylingViewController.swift */,
 				9377CD47220CA13900DE0400 /* Player.swift */,
+				939A1258221B522B00BE7BF0 /* Players.swift */,
 				9316E8CD2218C28C003BCC95 /* Localizable.strings */,
 			);
 			path = Spinn;
@@ -178,6 +185,14 @@
 				937273E321F0E7DC0011AC85 /* Info.plist */,
 			);
 			path = SpinnUITests;
+			sourceTree = "<group>";
+		};
+		939A1251221B4A0200BE7BF0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				939A1256221B4D4C00BE7BF0 /* flag.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		93EC96C3221776D2000E490E /* Frameworks */ = {
@@ -295,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				937273CC21F0E7DC0011AC85 /* LaunchScreen.storyboard in Resources */,
+				939A1254221B4D4C00BE7BF0 /* flag.png in Resources */,
 				9316E8CB2218C28C003BCC95 /* Localizable.strings in Resources */,
 				937273C921F0E7DC0011AC85 /* Assets.xcassets in Resources */,
 				937273C721F0E7DB0011AC85 /* Main.storyboard in Resources */,
@@ -329,12 +345,13 @@
 				93B00C2621FB5C0B000171AA /* SubjectViewController.swift in Sources */,
 				93F7C0F02214F4D100624871 /* QuestionCollectionViewCell.swift in Sources */,
 				932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */,
+				939A1259221B522B00BE7BF0 /* Players.swift in Sources */,
 				935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */,
 				932206DF2217236A00BB020C /* ScoreCollectionViewCell.swift in Sources */,
 				937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */,
 				93FEBF3A22088AE800977C28 /* QuestionViewController.swift in Sources */,
 				937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */,
-				932D74E22207D5C10007A8C4 /* GamePlay.swift in Sources */,
+				932D74E22207D5C10007A8C4 /* EditPlayers.swift in Sources */,
 				93F592C32219F3AD0031A27B /* Language.swift in Sources */,
 				93FEBF3C2208CE2100977C28 /* ScoreViewController.swift in Sources */,
 				931593EE220B80690006FAA2 /* StylingViewController.swift in Sources */,
@@ -398,6 +415,15 @@
 				9316E8C622189A89003BCC95 /* sv */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		939A1256221B4D4C00BE7BF0 /* flag.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				939A1255221B4D4C00BE7BF0 /* Base */,
+				939A1257221B4D5700BE7BF0 /* sv */,
+			);
+			name = flag.png;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

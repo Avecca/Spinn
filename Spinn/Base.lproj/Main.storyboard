@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-mf-IZX">
-                                <rect key="frame" x="36.000000000000007" y="868" width="97.666666666666686" height="17"/>
+                                <rect key="frame" x="36" y="868" width="98" height="17"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -152,10 +152,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-iO-SOx">
-                                <rect key="frame" x="342" y="44" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxH-iO-SOx">
+                                <rect key="frame" x="20" y="44" width="75" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Svenska"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
+                                <state key="normal" title="Svenska" backgroundImage="flag.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="langBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAg-bG-SPw"/>
                                 </connections>
@@ -431,19 +434,22 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="hl5-rc-bIT" customClass="QuestionCollectionViewCell" customModule="Spinn" customModuleProvider="target">
-                                        <rect key="frame" x="82.666666666666671" y="0.0" width="177" height="55"/>
+                                        <rect key="frame" x="82.5" y="0.0" width="177" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5p-Fw-QQK">
-                                                    <rect key="frame" x="2" y="2" width="173" height="57.666666666666664"/>
+                                                    <rect key="frame" x="2" y="2" width="173" height="57.5"/>
+                                                    <color key="backgroundColor" red="0.32164970009999999" green="0.96216261390000002" blue="0.95632151700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="V5p-Fw-QQK" secondAttribute="height" multiplier="3:1" id="EeG-9a-REl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="nameBtnPressed:" destination="hl5-rc-bIT" eventType="touchUpInside" id="kwy-X4-G7s"/>
                                                         <segue destination="nom-XJ-SJy" kind="show" identifier="segueToScoreId" id="ogB-Zu-P2S"/>
@@ -490,6 +496,7 @@
                         <outlet property="collectionView" destination="l9l-Xp-NZc" id="KcU-s0-bGL"/>
                         <outlet property="dareQuestionLbl" destination="K1U-Yn-gAy" id="BHb-ME-nka"/>
                         <outlet property="pointPicker" destination="M7l-cT-lbg" id="0CQ-9q-r9x"/>
+                        <outlet property="rateLbl" destination="vYo-KA-ihR" id="nb0-T1-hHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFf-K5-NRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -533,7 +540,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="V4R-y1-bSc" customClass="ScoreCollectionViewCell" customModule="Spinn" customModuleProvider="target">
-                                        <rect key="frame" x="79.666666666666671" y="0.0" width="255" height="53"/>
+                                        <rect key="frame" x="79.5" y="0.0" width="255" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="53"/>
@@ -613,6 +620,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flag.png" width="128" height="80"/>
         <image name="location_arrow" width="256" height="256"/>
         <image name="plus_sign" width="500" height="500"/>
     </resources>

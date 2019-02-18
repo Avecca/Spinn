@@ -16,6 +16,7 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
     let segToStartId = "unwindToStartId"
     var recievingName : String?
     var orderedList : [Player] = []
+    private let editPlayers = EditPlayers()
     
     @IBOutlet weak var nextBtnPressed: UIButton!
     @IBOutlet weak var scoreConnectionView : UICollectionView!
@@ -28,7 +29,8 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
         scoreConnectionView.delegate = self
         scoreConnectionView.dataSource = self
         
-        orderedList = GamePlay.playerArray
+        //Create Array ordered after points for the players
+        orderedList = Players.playerArray
         orderedList.sort(by: { $0.getPoints() > $1.getPoints() })
         
         //TODO FIXA NAMNET
@@ -39,7 +41,7 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
 //            print("ordered  \(i)")
 //        }
 //
-//        for i in GamePlay.playerArray {
+//        for i in Players.playerArray {
 //            print("playerarray \(i)")
 //        }
     }
@@ -86,24 +88,21 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
             let destinationVC = segue.destination as! SubjectViewController
             
             if let name = recievingName{
-                print("Not empty name")
+                //print("Not empty name")
                 destinationVC.topicLbl.text = "\(name) \(NSLocalizedString("choose_topic_lbl", comment: ""))"
             }
             
-            print("NextBtn CLICK!")
+            //print("NextBtn CLICK!")
         }
         
         if segue.identifier == segToStartId {
             
-            print("Quitting the game")
-            //let vc = segue.destination as! ViewController
+           // print("Quitting the game")
+
+           //Remova all Players
+           editPlayers.nilPlayerArray()
             
-            //vc.nilPlayerArray()
-            //super.players.nilPlayerArray()
-            GamePlay.playerArray.removeAll()
-            
-            
-            
+            //Players.playerArray.removeAll()
             
         }
     }

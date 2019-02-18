@@ -44,6 +44,60 @@ class SpinnViewController: UIViewController {
         spinnBtn.setTitle(NSLocalizedString("spinn", comment: ""), for: .normal)
         spinnBtn.titleLabel?.font = UIFont(name: btnFont, size: btnSize)
 
+        
+        //changes based on background color
+        changesOnSubjectChoosen()
+        
+
+        
+    }
+    
+
+    
+    @IBAction func truthDareBtns(_ sender: Any) {
+        //OBS sender: sender istället för sender: self för att få detta att funka
+         performSegue(withIdentifier: segId, sender: sender)
+        
+    }
+    //When you want to spinn the arrow
+    @IBAction func spinnBtnAction(_ sender: Any) {
+        
+        //TODO TESTA DETTA IGEN
+//        let rotateImg = CABasicAnimation(keyPath: "transform.rotation") //.z
+//        //let randomAngle = arc4random_uniform(361) + 360
+//        rotateImg.fromValue = 0.0
+//        rotateImg.toValue = CGFloat(.pi * 2.0)//Float(randomAngle) * .pi  / 180
+//        //CGFloat(.pi * 2.0) // 1 //((360*M_PI)/180)
+//        rotateImg.duration = 1.0
+//        rotateImg.repeatCount = Float.infinity //0//Float.infinity
+//        rotateImg.isRemovedOnCompletion = false
+//        spinnImgBtn.layer.add(rotateImg, forKey: nil)
+        
+        
+        spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: [] )
+        spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: .normal)
+        
+        //spinnBtn.titleLabel?.text = "RE SPINN"
+        
+        
+        //Disable the buttons while image is spinning
+        disableBtnsWhileSpinning()
+
+        //Start spinning the arrow image button
+        self.rotateImage()
+        
+        //create a random delay to stop the spinning at
+        let delay: Float =  Float.random(in: minDelay ... maxDelay)
+
+        //after random delay stop the spinning
+        self.endSpinn(delay: delay)
+  
+        
+    }
+    
+    
+    func changesOnSubjectChoosen() {
+        
         //Set the background to the topics color
         view.backgroundColor = recievingColor
         
@@ -66,58 +120,6 @@ class SpinnViewController: UIViewController {
             spinnImgBtn.setImage(UIImage(named: "loction_arrow_red"), for: .normal)
             
         }
-        
-    }
-    
-
-    
-    @IBAction func truthDareBtns(_ sender: Any) {
-        //OBS sender: sender istället för sender: self för att få detta att funka
-         performSegue(withIdentifier: segId, sender: sender)
-        
-    }
-    
-    @IBAction func spinnBtnAction(_ sender: Any) {
-        
-        //TODO TESTA DETTA IGEN
-//        let rotateImg = CABasicAnimation(keyPath: "transform.rotation") //.z
-//        //let randomAngle = arc4random_uniform(361) + 360
-//        rotateImg.fromValue = 0.0
-//        rotateImg.toValue = CGFloat(.pi * 2.0)//Float(randomAngle) * .pi  / 180
-//        //CGFloat(.pi * 2.0) // 1 //((360*M_PI)/180)
-//        rotateImg.duration = 1.0
-//        rotateImg.repeatCount = Float.infinity //0//Float.infinity
-//        rotateImg.isRemovedOnCompletion = false
-//        spinnImgBtn.layer.add(rotateImg, forKey: nil)
-        
-
-        
-
-        
-        spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: [] )
-        spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: .normal)
-        
-        //spinnBtn.titleLabel?.text = "RE SPINN"
-        
-        //Disable the buttons while image is spinning
-        self.truthBtn.isEnabled = false
-        self.dareBtn.isEnabled = false
-        self.spinnImgBtn.isEnabled = false
-        self.spinnBtn.isEnabled = false
-
-        
-
-        
-        
-        //Spinn the arrow image button
-        self.rotateImage()
-        
-        //create a random delay to stop the spinning at
-        let delay: Float =  Float.random(in: minDelay ... maxDelay)
-
-        //after random delay stop the spinning
-        endSpinn(delay: delay)
-  
         
     }
     
@@ -158,20 +160,35 @@ class SpinnViewController: UIViewController {
             //print("\(self.finished) är boolen")
             
             //TODO Knapparna ska visas och enableas
-            
-            self.truthBtn.isHidden = false
-            self.dareBtn.isHidden = false
-            self.orBtn.isHidden = false
-            self.truthBtn.isEnabled = true
-            self.dareBtn.isEnabled = true
-            self.spinnImgBtn.isEnabled = true
-            self.spinnBtn.isEnabled = true
+            self.showBtnsAfterSpinn()
+
             
         }
     }
-    
 
     
+    func disableBtnsWhileSpinning() {
+        
+        self.truthBtn.isEnabled = false
+        self.dareBtn.isEnabled = false
+        self.spinnImgBtn.isEnabled = false
+        self.spinnBtn.isEnabled = false
+        
+    }
+    
+    func showBtnsAfterSpinn() {
+        
+        self.truthBtn.isHidden = false
+        self.dareBtn.isHidden = false
+        self.orBtn.isHidden = false
+        self.truthBtn.isEnabled = true
+        self.dareBtn.isEnabled = true
+        self.spinnImgBtn.isEnabled = true
+        self.spinnBtn.isEnabled = true
+        
+    }
+    
+ 
     //Segue to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //print("Testing recieing from cell if \(recievingSubject) is nil")
@@ -195,6 +212,8 @@ class SpinnViewController: UIViewController {
             } else {
                 destinationVC.recievingType = btnType.lowercased()
             }
+            
+            destinationVC.recievingColor = self.recievingColor
             
             
         }

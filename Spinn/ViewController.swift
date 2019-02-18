@@ -11,6 +11,7 @@ import UIKit
 class ViewController: StylingViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     let segueId = "segueToSubjectId"
+    private let editPlayers = EditPlayers()
     
     @IBOutlet weak var addPlayerTxtField: UITextField!
     @IBOutlet weak var playerCollectionView: UICollectionView!
@@ -18,10 +19,8 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     @IBOutlet weak var welcomeLbl: UILabel!
     @IBOutlet weak var playersTitleLbl: UILabel!
     @IBOutlet weak var langbtn: UIButton!
-    //If adding more languages add them in language.swift as well
-    //var languages: [Language] = [.english, .swedish]
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +46,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     
     func showCorrect()   {
-        if GamePlay.playerArray.isEmpty {
+        if Players.playerArray.isEmpty {
             
             playBtn.isHidden = true
             playersTitleLbl.isHidden = true
@@ -63,41 +62,17 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     @IBAction func langBtnPressed(_ sender: Any) {
         //print(Locale.current.languageCode!)
         
-        
-         if let switchToLang = (langbtn.titleLabel!.text)?.lowercased()
-         {
-            if switchToLang == "svenska" {
-                Bundle.set(language: Language.svenska)
-            }
-            else{
-                //default engelska
-                Bundle.set(language: Language.english)
-            }
-           // Bundle.set(language: swi)
-            
-            
-            //reload the viewcontroller to reflect the changes
-            let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstViewControllerID")
-            let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-            rootviewcontroller.rootViewController = firstVC
-            
-  
-         }
-        
-       
+        //Switch Languages
+        switchLanguage()
         
 //        let path = Bundle.main.path(forResource: "ar", ofType: "lproj")
 //        let bundle = Bundle(path: path!)
 //        let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
 //        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
 //        delegate.window?.rootViewController = (storyboard.instantiateInitialViewController())
-        
-        
-    
- 
     }
     
-    
+   
     //Ready to play dyslexic style!
     @IBAction func rdyToiPlatBtn(_ sender: Any) {
         
@@ -109,48 +84,62 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         
         let index = sender.tag  //TODO check how to check this in if let
         
-        removePlayer(index: index)
+        //remove Player from the list
+        editPlayers.removePlayer(index: index)
         
         //reload the listed view
         self.playerCollectionView.reloadData()
+        //indicate that you can scroll in the collectionview
+        playerCollectionView.flashScrollIndicators()
         
         //If empty list remove the ability to press play
-        if GamePlay.playerArray.isEmpty {
+        if Players.playerArray.isEmpty {
             //print("array tom efter delete!")
             playBtn.isHidden = true
         }
     }
     
-
-    
+ 
     
     @IBAction func addPlayer(_ sender: Any) { //pressed
-        //super.addPlayer(name: "Hanna")
-        //addPlayerTxtField.isEnabled = true
+        //when clicking add, activate the textfield
+        addPlayerTxtField.becomeFirstResponder()
+        
+        //When adding players make certain things available
         playersTitleLbl.isHidden = false
         addPlayerTxtField.isHidden = false
-        addPlayerTxtField.becomeFirstResponder()
+        playerCollectionView.flashScrollIndicators()
     }
     
-    //change the player array
-    func addPlayerToList() {
-        
-        if let player = addPlayerTxtField.text {
-            GamePlay.playerArray.append(Player(player))
+    
+    
+    //switch between the 2 predefined languages
+    func switchLanguage(){
+        if let switchToLang = (langbtn.titleLabel!.text)?.lowercased()
+        {
+            if switchToLang == "svenska" {
+                Bundle.set(language: Language.svenska)
+            }
+            else{
+                //default engelska
+                Bundle.set(language: Language.english)
+            }
+            // Bundle.set(language: swi)
+            
+            
+            //reload the viewcontroller to reflect the changes
+            let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstViewControllerID")
+            let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+            rootviewcontroller.rootViewController = firstVC
+            
         }
-        
-    }
-    func removePlayer(index: Int) {
-        GamePlay.playerArray.remove(at: index)
     }
     
-    
-
     
     //DataSource och delegat for collectionviewn
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return super.players.playerArray.count
-        return GamePlay.playerArray.count
+        return Players.playerArray.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -161,7 +150,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         let cell = playerCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlayerCollectionViewCell
         let cellIndex = indexPath.item
         
-        cell.nameLbl.text = GamePlay.playerArray[cellIndex].getName() //super.players.playerArray[cellIndex].getName()
+        cell.nameLbl.text = Players.playerArray[cellIndex].getName() //super.players.playerArray[cellIndex].getName()
         
         cell.deleteBtn.isHidden = false
         cell.deleteBtn.tag = cellIndex
@@ -196,10 +185,8 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //addPlayerTxtField.backgroundColor = super.bgColor
-        //addPlayerTxtField.isEnabled = false
         addPlayerTxtField.isHidden = true
-        if !GamePlay.playerArray.isEmpty {
+        if !Players.playerArray.isEmpty {
            // print("INte tom!")
             playBtn.isHidden = false
         }
@@ -208,23 +195,23 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if addPlayerTxtField.isFirstResponder {
-            //super.players.addPlayer(name: addPlayerTxtField.text!)
-                    if( !GamePlay.playerArray.contains(where: { $0.getName()  == addPlayerTxtField.text!})) {
-                        //print("Adding player with name \(addPlayerTxtField.text)")
-                       
-                        addPlayerToList()
+            
+                    if( !Players.playerArray.contains(where: { $0.getName()  == addPlayerTxtField.text!})) {
                         
+                        //change the player array
+                        if let player = addPlayerTxtField.text {
+                            editPlayers.addPlayer(name: player)
+                                //Players.playerArray.append(Player(player))
+                        }
                     } else {
                         //TODO POPUP KANSSKE?
                     }
-            
-            //GamePlay.playerArray.append(Player(addPlayerTxtField.text!))
+
             addPlayerTxtField.resignFirstResponder()
             addPlayerTxtField.text = nil
             addPlayerTxtField.backgroundColor = .white
-            
+            //reload the view to reflect changes
             self.playerCollectionView.reloadData()
-            
         }
         return true
     }
@@ -235,7 +222,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         //print("Override händer med \(super.players.playerArray.count) players")
-        print("Override händer med \(GamePlay.playerArray.count) players")
+        print("Override händer med \(Players.playerArray.count) players")
         
         let destinationVC = segue.destination as! SubjectViewController
         destinationVC.recievingName = nil
@@ -251,6 +238,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     
 }
+
+
+//If adding more languages add them in language.swift as well
+//var languages: [Language] = [.english, .swedish]
 
 //
 //extension String {

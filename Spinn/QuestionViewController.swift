@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate,UICollectionViewDataSource {
+class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate,UICollectionViewDataSource {
 
     
 
@@ -16,17 +16,19 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
     
     var recievingSubject: String?
     var recievingType: String?
+    var recievingColor : UIColor?
     var type: String?
     let maxQuestions = 10
     let defaultType = "_truth"
     let defaultSubject = "oppsies_topic"
+    private let editPlayers = EditPlayers()
     
     private let points = [0,1,2,3,4,5]
     
     let segId = "segueToScoreId" //"placeholderSegueToScoreId"
     @IBOutlet weak var dareQuestionLbl: UILabel!
     @IBOutlet weak var pointPicker: UIPickerView!
-    
+    @IBOutlet weak var rateLbl: UILabel!
     @IBOutlet weak var  collectionView : UICollectionView!
     
     
@@ -43,17 +45,43 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         let defaultPointValue = points.count / 2
         pointPicker.selectRow(defaultPointValue, inComponent: 0, animated: false)
  
-//        for i in super.players.playerArray {
-//           print(i.getName())
-//        }
-        
-        //print(super.players.playerArray)
         
         //delegate and datasource for picker
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        //changes based on background color
+        changesOnSubjectChoosen()
+        
+        //layout for collectionview
+        cvLayout()
   
+    }
+    
+    func changesOnSubjectChoosen() {
+        //Set the background to the topics color
+        view.backgroundColor = recievingColor
+        
+        if recievingSubject == "physical_topic" {//
+            dareQuestionLbl.textColor = .white
+            rateLbl.textColor = .white
+        }
+    }
+    
+    
+    func cvLayout()  {
+        let width = (view.frame.size.width)
+        let height = view.frame.size.height
+        let bounds = collectionView.bounds
+        let layout  = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellSize = (height < width) ? bounds.height/2 : bounds.width/2
+        //-20 bc min spacing -100 bc not square
+        layout.itemSize = CGSize(width: cellSize - 20, height: cellSize - 110)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        collectionView!.collectionViewLayout = layout
+        
+        
     }
     
     
@@ -64,6 +92,7 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         
         let rdm = Int.random(in: 1 ... maxQuestions)
         
+        //create string with pattern friendship_topic_truth_1 based on topic, truth or dare and a random number
         var truthDareString = ""
         
         //default value sin case something goes wrong
@@ -101,11 +130,30 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         return points.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        let pointValues = points[row]
+//
+//        return "\(pointValues) \(NSLocalizedString("pts", comment: ""))"
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        collectionView.flashScrollIndicators()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        let pointValues = points[row]
         
-        return "\(pointValues) \(NSLocalizedString("pts", comment: ""))"
+        //Choose text color in the picker
+        if recievingSubject?.lowercased() == "physical_topic" {//
+   
+            let textWithColor = NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor :
+            UIColor.white])
+            return textWithColor
+        }
+        
+       return  NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))" , attributes: [NSAttributedString.Key.foregroundColor :
+            UIColor.black])
     }
     
     
@@ -116,16 +164,14 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         
         //print("Spelare är.. \(super.players.playerArray.count)")
         
-        //        guard GamePlay.playerArray.count > 0  else {
+        //        guard Players.playerArray.count > 0  else {
         //            print("spelare är inte > 0")
         //            return 0
         //        }
         
-        print("Spelare är.. \(GamePlay.playerArray.count)")
+        //print("Spelare är.. \(Players.playerArray.count)")
         
-        //return super.players.playerArray.count
-        
-        return GamePlay.playerArray.count
+        return Players.playerArray.count
         
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -145,7 +191,7 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
         
         cell.nameBtn.isEnabled = true
 //        cell.nameBtn.setTitle(super.players.playerArray[cellIndex].getName(), for: .normal )
-         cell.nameBtn.setTitle(GamePlay.playerArray[cellIndex].getName(), for: .normal )
+         cell.nameBtn.setTitle(Players.playerArray[cellIndex].getName(), for: .normal )
         cell.nameBtn.setTitleColor( UIColor.blue, for: .normal)
         cell.nameBtn.backgroundColor = UIColor.white
         
@@ -173,10 +219,13 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
 
             let pointsToAdd = points[pointPicker.selectedRow(inComponent: 0)]
             let playerNumber = cell.tag
-            print(playerNumber)
+            //print(playerNumber)
             
             //add points to player
-            GamePlay.playerArray[playerNumber].addingPoints(addPoints: pointsToAdd)
+            editPlayers.addPlayerPoints(playerName: btnName, points: pointsToAdd)
+           
+            
+            //Players.playerArray[playerNumber].addingPoints(addPoints: pointsToAdd)
             
             let destinationVC = segue.destination as! ScoreViewController
             
@@ -185,8 +234,6 @@ class QuestionViewController: StylingViewController, UIPickerViewDataSource, UIP
             
         }
         
-    
     }
-
 
 }

@@ -21,8 +21,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     let segId = "segueToSpinnId"
     var subject : String?
 
-    
-    
+
     //connection mellan SubjectCollectionViewCell och här genom namnet subjectCollectionView, hittas genom connectioninspectorn på storyboardet på sidans subjectviewcontroller
     //tryck på cellen i view controller scene och välj klassen
     @IBOutlet weak var subjectCollectionView: UICollectionView!
@@ -37,8 +36,8 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         subjectCollectionView.dataSource = self
        // print("recieving name is \(recievingName)")
         
-        //print("Subjectsida händer med \(super.players.playerArray.count) players")
-        print("Subjectsida händer med \(GamePlay.playerArray.count) players")
+       // print("Subjectsida händer med \(Players.playerArray.count) players")
+       
         //If not second time here
         topicLbl.text = NSLocalizedString("choose_topic_lbl", comment: "")
         
@@ -77,26 +76,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         
     }
     
-    
-//    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
-//        //self.performSegueWithIdentifier("yourSegueIdentifier", sender: self)
-//        print("clickat")
-//        if let text = cell.subjectBtnView.titleLabel?.text { //currentTitle!
-//            subject = text
-//            print(subject)
-//        }
-//
-//    }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("menforfan")
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
-//        let index =  cell.subjectBtnView.titleLabel?.text
-//        subject = index
-//
-//    }
-    
-    
+    //segue to SpinnViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        // print("Testing \(subject) is nil")
       
@@ -124,7 +104,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         }
         
     }
-    
+    //unwind segue
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         print("Tillbaka till SubjectVC")
         
@@ -135,3 +115,25 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
 
 
 }
+
+
+
+
+//    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
+//        //self.performSegueWithIdentifier("yourSegueIdentifier", sender: self)
+//        print("clickat")
+//        if let text = cell.subjectBtnView.titleLabel?.text { //currentTitle!
+//            subject = text
+//            print(subject)
+//        }
+//
+//    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("menforfan")
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
+//        let index =  cell.subjectBtnView.titleLabel?.text
+//        subject = index
+//
+//    }
+
