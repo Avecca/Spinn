@@ -25,7 +25,7 @@ import UIKit
     func updateCornerRadius() {
         layer.cornerRadius = rounded ? frame.size.height / 2 : 0
         layer.borderWidth = 3
-        contentEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
+        contentEdgeInsets = UIEdgeInsets(top: 12,left: 10,bottom: 12,right: 10)
         
     }
 }

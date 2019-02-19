@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" translatesAutoresizingMaskIntoConstraints="NO" id="jsK-5C-7vf">
-                                <rect key="frame" x="131" y="66" width="152" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" translatesAutoresizingMaskIntoConstraints="NO" id="jsK-5C-7vf">
+                                <rect key="frame" x="130.5" y="66" width="153.5" height="62"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -31,12 +31,12 @@
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <color key="highlightedColor" red="0.062216764420000001" green="0.1695729483" blue="0.96216261390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="shadowColor" red="0.80874849449999997" green="0.89182630559999998" blue="0.99705493450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
+                                <color key="highlightedColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="shadowColor" red="1" green="0.80891770306331612" blue="0.29235848574799406" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmX-c4-kdP">
-                                <rect key="frame" x="36" y="413" width="342" height="320"/>
+                                <rect key="frame" x="36" y="413" width="342" height="319"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qZB-7K-v5u">
                                     <size key="itemSize" width="342" height="46"/>
@@ -59,13 +59,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-hl-OiR" customClass="MyRoundedButton" customModule="Spinn" customModuleProvider="target">
-                                                    <rect key="frame" x="303" y="8" width="39" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <rect key="frame" x="305" y="8" width="37" height="31"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="deleteBtnPressed:" destination="j4X-ff-KL9" eventType="touchUpInside" id="ldV-Ft-0D9"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-Mg-ekP">
-                                <rect key="frame" x="36" y="765" width="95" height="95"/>
+                                <rect key="frame" x="36" y="764" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="dhC-b3-btz"/>
                                     <constraint firstAttribute="width" constant="95" id="rAK-Vm-9WD"/>
@@ -109,9 +109,9 @@
                                     <action selector="addPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eu0-1x-MQn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-mf-IZX">
-                                <rect key="frame" x="36" y="868" width="98" height="17"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-mf-IZX">
+                                <rect key="frame" x="36" y="867" width="103.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -120,7 +120,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="143" id="IA0-ai-Q7n"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -134,21 +134,6 @@
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T" customClass="MyRoundedButton" customModule="Spinn" customModuleProvider="target">
-                                <rect key="frame" x="254" y="783" width="124" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="32"/>
-                                <color key="tintColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="PLAY!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="rdyToiPlatBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ga0-um-k7y"/>
-                                </connections>
-                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5l5-G7-CMH">
                                 <rect key="frame" x="36" y="372" width="342" height="30"/>
                                 <constraints>
@@ -170,6 +155,21 @@
                                     <action selector="langBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAg-bG-SPw"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T" customClass="MyRoundedButton" customModule="Spinn" customModuleProvider="target">
+                                <rect key="frame" x="290" y="785" width="88" height="53"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="23"/>
+                                <color key="tintColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="PLAY!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rdyToiPlatBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ga0-um-k7y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -179,7 +179,7 @@
                             <constraint firstItem="XCy-pv-UwR" firstAttribute="top" secondItem="jsK-5C-7vf" secondAttribute="bottom" constant="45" id="CHT-Kt-ZlU"/>
                             <constraint firstItem="PCL-mf-IZX" firstAttribute="top" secondItem="BrN-Mg-ekP" secondAttribute="bottom" constant="8" id="DGn-ep-0dB"/>
                             <constraint firstItem="BrN-Mg-ekP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="G7m-B4-buu"/>
-                            <constraint firstAttribute="bottom" secondItem="xhO-nc-Q3T" secondAttribute="bottom" constant="67" id="HGV-g4-H4N"/>
+                            <constraint firstAttribute="bottom" secondItem="xhO-nc-Q3T" secondAttribute="bottom" constant="58" id="HGV-g4-H4N"/>
                             <constraint firstItem="5l5-G7-CMH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hy1-6I-bFa"/>
                             <constraint firstItem="5l5-G7-CMH" firstAttribute="top" secondItem="gd7-Lb-WtB" secondAttribute="bottom" constant="8" symbolic="YES" id="JLS-Bf-m2t"/>
                             <constraint firstItem="XCy-pv-UwR" firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JPn-pa-jZU"/>
