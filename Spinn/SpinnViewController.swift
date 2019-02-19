@@ -17,13 +17,11 @@ class SpinnViewController: UIViewController {
     let segId = "segueToPointId"
     let btnFont = "Bradley Hand"
     let btnSize = 48 as CGFloat
-    var finished: Bool = false
-    //min and max time the arrow is spinning
-    let minDelay: Float = 2.5
-    let maxDelay : Float = 11 //10 seconds
+
     //swedishversion variables
     let sweTruth = "Sanning"
     let sweDare = "Konka"
+    let spinn = Spinn()
     
     
     @IBOutlet weak var truthBtn: UIButton!
@@ -87,7 +85,7 @@ class SpinnViewController: UIViewController {
         self.rotateImage()
         
         //create a random delay to stop the spinning at
-        let delay: Float =  Float.random(in: minDelay ... maxDelay)
+        let delay: Float = spinn.delay()
 
         //after random delay stop the spinning
         self.endSpinn(delay: delay)
@@ -126,26 +124,10 @@ class SpinnViewController: UIViewController {
     //Rotate the arrow image
     func rotateImage() {
         
-        self.finished = false
+        let btn = self.spinnImgBtn as UIButton
         
-        //print("\(finished) är boolen vid starttryck")
-        UIView.animate( withDuration: 0.02,
-                        delay: 0.0,
-                        options: .curveLinear,
-                        animations: {
-                        
-                        
-                            self.spinnImgBtn.transform = self.spinnImgBtn.transform.rotated(by: .pi / 50) // CGAffineTransform(rotationAngle: .pi)//self.spinnImgBtn.transform.rotated(by: .pi)
-                            //self.updateIcon.transform = CGAffineTransform(rotationAngle: .pi)
-                            },
-                        completion: { completed in
-                            if !self.finished {
-                                //print("\(self.finished) är boolen vid completed")
-                            
-                                self.rotateImage()
-                                }
-                            }
-                        )
+        //start spinning the mentioned btn
+        spinn.rotateImage(btn: btn)
         
     }
     
@@ -153,17 +135,10 @@ class SpinnViewController: UIViewController {
     // End the spinning after a random amount of double
     func endSpinn(delay: Float) {
         
-        print("\(delay) är doublelen")
-        DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
-            
-            self.finished = true
-            //print("\(self.finished) är boolen")
-            
-            //TODO Knapparna ska visas och enableas
-            self.showBtnsAfterSpinn()
+        spinn.endSpinn(delay: delay)
 
-            
-        }
+        //TODO Knapparna ska visas och enableas
+         self.showBtnsAfterSpinn()
     }
 
     
