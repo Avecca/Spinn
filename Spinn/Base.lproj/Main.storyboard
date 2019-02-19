@@ -53,17 +53,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vak-Sc-FL9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="5" height="46"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="46"/>
                                                     <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-hl-OiR">
-                                                    <rect key="frame" x="312" y="0.0" width="30" height="46"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-hl-OiR" customClass="MyRoundedButton" customModule="Spinn" customModuleProvider="target">
+                                                    <rect key="frame" x="303" y="8" width="39" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="deleteBtnPressed:" destination="j4X-ff-KL9" eventType="touchUpInside" id="ldV-Ft-0D9"/>
                                                         <action selector="deletePlayerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gmb-WO-ejV"/>
@@ -73,16 +76,16 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="vak-Sc-FL9" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="8QF-WE-Rwd"/>
-                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="914-TZ-8MW"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" constant="8" id="914-TZ-8MW"/>
                                             <constraint firstAttribute="bottom" secondItem="vak-Sc-FL9" secondAttribute="bottom" id="AUM-mc-q2H"/>
                                             <constraint firstAttribute="trailing" secondItem="xOg-hl-OiR" secondAttribute="trailing" id="L76-06-EuX"/>
                                             <constraint firstItem="vak-Sc-FL9" firstAttribute="leading" secondItem="j4X-ff-KL9" secondAttribute="leading" id="SXy-f4-wTR"/>
-                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="bkz-FZ-jfr"/>
-                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="cNK-b7-kbM"/>
-                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="g87-ZQ-nZs"/>
-                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" id="smI-M8-5c0"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" constant="7" id="bkz-FZ-jfr"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" constant="8" id="cNK-b7-kbM"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" constant="7" id="g87-ZQ-nZs"/>
+                                            <constraint firstItem="xOg-hl-OiR" firstAttribute="top" secondItem="j4X-ff-KL9" secondAttribute="top" constant="8" id="smI-M8-5c0"/>
                                             <constraint firstAttribute="trailing" secondItem="xOg-hl-OiR" secondAttribute="trailing" id="xBq-jb-NaC"/>
-                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" id="zSe-QZ-wVS"/>
+                                            <constraint firstAttribute="bottom" secondItem="xOg-hl-OiR" secondAttribute="bottom" constant="7" id="zSe-QZ-wVS"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="deleteBtn" destination="xOg-hl-OiR" id="bbW-3B-ixW"/>
@@ -131,13 +134,17 @@
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T">
-                                <rect key="frame" x="274" y="785" width="104" height="44"/>
+                            <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-nc-Q3T" customClass="MyRoundedButton" customModule="Spinn" customModuleProvider="target">
+                                <rect key="frame" x="254" y="783" width="124" height="46"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="32"/>
+                                <color key="tintColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="PLAY!">
-                                    <color key="titleColor" red="0.85862151019999999" green="0.29447292390000002" blue="0.1099969433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="rdyToiPlatBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ga0-um-k7y"/>
                                 </connections>
@@ -475,7 +482,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-KA-ihR">
                                 <rect key="frame" x="33" y="435" width="103" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

@@ -70,8 +70,8 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
         cell.scoreLbl.tag = cellIndex
         
         if orderedList[cellIndex].getName() == recievingName {
-            cell.nameLbl.textColor = .blue
-            cell.scoreLbl.textColor = .blue
+            cell.nameLbl.textColor = .white
+            cell.scoreLbl.textColor = .white
         }
         
         return cell
@@ -89,7 +89,7 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
             
             if let name = recievingName{
                 //print("Not empty name")
-                destinationVC.topicLbl.text = "\(name) \(NSLocalizedString("choose_topic_lbl", comment: ""))"
+                destinationVC.topicLbl.text = "\(name) \(NSLocalizedString("choose_topic_lbl", comment: "").lowercased())"
             }
             
             //print("NextBtn CLICK!")

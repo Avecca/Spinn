@@ -22,6 +22,8 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     let defaultType = "_truth"
     let defaultSubject = "oppsies_topic"
     private let editPlayers = EditPlayers()
+    let btnFont = "Rockwell-Bold"
+    let btnSize = 22
     
     private let points = [0,1,2,3,4,5]
     
@@ -140,20 +142,42 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         collectionView.flashScrollIndicators()
     }
+//
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//
+//
+//        //Choose text color in the picker
+//        if recievingSubject?.lowercased() == "physical_topic" {//
+//
+//            let textWithColor = NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor :
+//            UIColor.white])
+//            return textWithColor
+//        }
+//
+//
+//       return  NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))" , attributes: [NSAttributedString.Key.foregroundColor :
+//            UIColor.black])
+//    }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pLbl = UILabel()
+        pLbl.font = UIFont(name: btnFont  , size: CGFloat(btnSize))
+        pLbl.textAlignment = .center
+        pLbl.text = NSLocalizedString("\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", comment: "")
         
         //Choose text color in the picker
         if recievingSubject?.lowercased() == "physical_topic" {//
-   
-            let textWithColor = NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor :
-            UIColor.white])
-            return textWithColor
+            
+            pLbl.textColor = UIColor.white
+            
+           
+        }else{
+            pLbl.textColor = UIColor.black
+            
         }
         
-       return  NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))" , attributes: [NSAttributedString.Key.foregroundColor :
-            UIColor.black])
+        
+        return pLbl
     }
     
     

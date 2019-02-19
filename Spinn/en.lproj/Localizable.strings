@@ -8,7 +8,7 @@
 
 "welcome_description" = "Welcome to Spinn! A version of the spinn the bottle game where you rate your friends truths and dares.";
 "play_button" = "PLAY!";
-"choose_topic_lbl" = "Choose Topic";
+"choose_topic_lbl" = "Choose topic";
 "truth_btn" = "Truth";
 "dare_btn" = "Dare";
 "spinn" = "SPINN";

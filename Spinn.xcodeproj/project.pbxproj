@@ -13,6 +13,7 @@
 		932D74DE2207A7920007A8C4 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DD2207A7920007A8C4 /* ButtonExtension.swift */; };
 		932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74DF2207B8580007A8C4 /* SpinnViewController.swift */; };
 		932D74E22207D5C10007A8C4 /* EditPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932D74E12207D5C10007A8C4 /* EditPlayers.swift */; };
+		9358BB86221C6F8F0061BDA3 /* RoundedButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9358BB85221C6F8F0061BDA3 /* RoundedButtons.swift */; };
 		935AD509220DA5DB002F4012 /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */; };
 		937273C221F0E7DB0011AC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C121F0E7DB0011AC85 /* AppDelegate.swift */; };
 		937273C421F0E7DB0011AC85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937273C321F0E7DB0011AC85 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		932D74DD2207A7920007A8C4 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		932D74DF2207B8580007A8C4 /* SpinnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnViewController.swift; sourceTree = "<group>"; };
 		932D74E12207D5C10007A8C4 /* EditPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayers.swift; sourceTree = "<group>"; };
+		9358BB85221C6F8F0061BDA3 /* RoundedButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtons.swift; sourceTree = "<group>"; };
 		935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		937273BE21F0E7DB0011AC85 /* Spinn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spinn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937273C121F0E7DB0011AC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				937273C121F0E7DB0011AC85 /* AppDelegate.swift */,
 				937273C321F0E7DB0011AC85 /* ViewController.swift */,
 				937273C521F0E7DB0011AC85 /* Main.storyboard */,
+				9358BB85221C6F8F0061BDA3 /* RoundedButtons.swift */,
 				932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */,
 				93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */,
 				93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */,
@@ -339,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F592C12219F34B0031A27B /* LangExtension.swift in Sources */,
+				9358BB86221C6F8F0061BDA3 /* RoundedButtons.swift in Sources */,
 				9377CD48220CA13900DE0400 /* Player.swift in Sources */,
 				93B00C2421FB49C2000171AA /* SubjectCollectionViewCell.swift in Sources */,
 				932D74E02207B8580007A8C4 /* SpinnViewController.swift in Sources */,

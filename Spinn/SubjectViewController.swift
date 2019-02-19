@@ -12,8 +12,6 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     
     
     var recievingName: String?
-    let btnFont = "Rockwell-Bold"
-    let btnSize = 32
     var subjectArray  = [("friendship_topic"),("romance_topic"),("parties_topic"),("physical_topic"),("psyche_topic"),("oppsies_topic")]
      //var subjectArray  = [("Friendship"),("Romance"),("Parties"),("Physical"),("Psyche"),("Oppsies")] //: [String]
     var subjectColor : [UIColor] = [(UIColor.blue),(UIColor.red),(UIColor.purple),(UIColor.black),(UIColor.brown),(UIColor.orange)]
@@ -64,7 +62,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
        cell.subjectBtnView.setTitle(NSLocalizedString(subjectArray[cellIndex], comment: ""), for: .normal)
         //cell.subjectBtnView.setTitleColor(subjectColor[cellIndex], for: .normal)
         cell.subjectBtnView.setTitleColor((subjectColor[cellIndex]), for: .normal)
-        cell.subjectBtnView.titleLabel?.font = UIFont(name: btnFont, size: CGFloat(btnSize))
+        cell.subjectBtnView.titleLabel?.font = UIFont(name: super.btnFont, size: CGFloat(super.btnSize))
         cell.subjectBtnView.layer.borderColor = (subjectColor[cellIndex]).cgColor
         cell.subjectBtnView.backgroundColor = UIColor.white
         cell.subjectBtnView.tag = cellIndex
