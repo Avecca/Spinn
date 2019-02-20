@@ -25,6 +25,9 @@
 "oppsies_topic" = "Cringe";
 "duplicate_name" = "Duplicate name";
 "duplicate_name_message" = "That name is already used, add a unique name.";
+"rate_truth" = "Rate truth";
+"rate_dare" = "Rate dare";
+"rate_player" = "For";
 
 
 //friendship truths

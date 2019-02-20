@@ -25,6 +25,9 @@
 "oppsies_topic" = "Pinsamt";
 "duplicate_name" = "Dubblerat namn";
 "duplicate_name_message" = "Det namnet används redan, använd ett unikt namn.";
+"rate_truth" = "Betygsätt sanningen";
+"rate_dare" = "Betygsätt handlingen";
+"rate_player" ="För";
 
 //friendship truths
 "friendship_topic_truth_1" = "Har du någonsin låtit en vän ta skulden för något du gjort?" ;
@@ -148,7 +151,7 @@
 //oppsies truths
 "oppsies_topic_truth_1" = "Vad var det senaste du googlade på i din telefon?";
 "oppsies_topic_truth_2" = "Vad är det mest barnsliga du fortfarande håller på med?";
-"oppsies_topic_truth_3" = "Vad var ditt värsta möte med en polis?";
+"oppsies_topic_truth_3" = "Vad är ditt värsta möte med en polis?";
 "oppsies_topic_truth_4" = "Vad är det mest förödmjukande dina föräldrar ertappat dig göra?";
 "oppsies_topic_truth_5" = "Vad är det värsta tillfället du fisit?";
 "oppsies_topic_truth_6" = "Har du någonsin kissat i en pool?";

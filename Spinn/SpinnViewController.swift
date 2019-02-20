@@ -113,7 +113,7 @@ class SpinnViewController: UIViewController {
         
         if recievingSubject == "physical_topic" {//
             orBtn.textColor = .white
-            spinnImgBtn.setImage(UIImage(named: "loction_arrow_red"), for: .normal)
+            spinnImgBtn.setImage(UIImage(named: "location_arrow_red2"), for: .normal)
             
         }
         

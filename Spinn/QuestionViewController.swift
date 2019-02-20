@@ -10,9 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate,UICollectionViewDataSource {
 
-    
 
-    
     
     var recievingSubject: String?
     var recievingType: String?
@@ -24,6 +22,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     private let editPlayers = EditPlayers()
     let btnFont = "Rockwell-Bold"
     let btnSize = 22
+    var rotAngle: CGFloat = 0.0
     
     private let points = [0,1,2,3,4,5]
     
@@ -31,7 +30,10 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var dareQuestionLbl: UILabel!
     @IBOutlet weak var pointPicker: UIPickerView!
     @IBOutlet weak var rateLbl: UILabel!
+    @IBOutlet weak var forLbl: UILabel!
     @IBOutlet weak var  collectionView : UICollectionView!
+    
+    
     
     
     
@@ -46,7 +48,9 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pointPicker.sizeToFit() //TODO TITTA PÅ DENNA
         let defaultPointValue = points.count / 2
         pointPicker.selectRow(defaultPointValue, inComponent: 0, animated: false)
- 
+
+        // Make pointpicker horizontal
+        pVLayout()
         
         //delegate and datasource for picker
         collectionView.delegate = self
@@ -65,6 +69,21 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return true
     }
     
+    // Make pointpicker horizontal
+    func pVLayout() {
+        
+        //reset the frame
+        //old y position
+        let w = pointPicker.frame.origin.y //orginal w spot
+        //let no = pointPicker.frame.width
+        rotAngle = -90 * (.pi/180)  // - to get the 0 on the left
+        pointPicker.transform = CGAffineTransform(rotationAngle: rotAngle) //radiant angle
+        
+        //where to position the pv
+        pointPicker.frame = CGRect(x: -200, y: w, width: view.frame.width + 400, height: 100)  //100 is the height of the original pv from storyboard
+        //wont be all the way to the edge so can add 100ish to stretch it on each side (x -100, y +100 so + 200 on width
+    }
+    
     func changesOnSubjectChoosen() {
         //Set the background to the topics color
         view.backgroundColor = recievingColor
@@ -73,6 +92,21 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
             dareQuestionLbl.textColor = .white
             rateLbl.textColor = .white
         }
+        
+        switch recievingType?.lowercased() {
+        case "truth",
+                "",
+                nil:
+            rateLbl.text = NSLocalizedString("rate_truth", comment: "")
+        case "dare":
+            rateLbl.text = NSLocalizedString("dare_truth", comment: "")
+        default:
+            rateLbl.text = NSLocalizedString("rate_truth", comment: "")
+        }
+        
+        forLbl.text = NSLocalizedString("rate_player", comment: "")
+        
+        
     }
     
     
@@ -89,7 +123,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         collectionView!.collectionViewLayout = layout
         
         //collectionview filled from bottom
-        collectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+//        collectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
         
         
     }
@@ -171,14 +205,20 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let pLbl = UILabel()
         pLbl.font = UIFont(name: btnFont  , size: CGFloat(btnSize))
         pLbl.textAlignment = .center
-        pLbl.text = NSLocalizedString("\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", comment: "")
+        pLbl.text = "\(String(points[row]))"
+        // NSLocalizedString("\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", comment: "")
         
         //Choose text color in the picker
         if recievingSubject?.lowercased() == "physical_topic" {//
             pLbl.textColor = UIColor.white
+            forLbl.textColor = UIColor.white
+            
         }else{
             pLbl.textColor = UIColor.black
         }
+        
+        //make horizontal text after changing the direction of the picker the text is twisted with it, set the lbls degrees as opposit that of the PV
+        pLbl.transform = CGAffineTransform(rotationAngle: (90 * (.pi/180)))
         
         return pLbl
     }
@@ -218,7 +258,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         cell.nameBtn.tag = cellIndex
         
-        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        //cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
         return cell
     }
