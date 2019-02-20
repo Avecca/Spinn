@@ -83,6 +83,9 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         layout.minimumInteritemSpacing = 0
         collectionView!.collectionViewLayout = layout
         
+        //collectionview filled from bottom
+        collectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+        
         
     }
     
@@ -225,6 +228,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         cell.nameBtn.tag = cellIndex
         
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
         return cell
     }

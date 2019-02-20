@@ -45,15 +45,15 @@ class Spinn {
     }
     
     //stop spinning when this function is called
-    func endSpinn(delay: Float) {
+    func endSpinn() {
         
         //print("\(delay) är doublelen")
-        DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
+       // DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
             
             self.finished = true
             //print("\(self.finished) är boolen")
       
-        }
+        //}
     }
     
     //Random delay to stop the spinning at

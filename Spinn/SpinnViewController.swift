@@ -135,10 +135,17 @@ class SpinnViewController: UIViewController {
     // End the spinning after a random amount of double
     func endSpinn(delay: Float) {
         
-        spinn.endSpinn(delay: delay)
+        DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
+            
+           self.spinn.endSpinn()
+            
+            //TODO Knapparna ska visas och enableas
+        self.showBtnsAfterSpinn()
+        }
+        
+        
 
-        //TODO Knapparna ska visas och enableas
-         self.showBtnsAfterSpinn()
+
     }
 
     

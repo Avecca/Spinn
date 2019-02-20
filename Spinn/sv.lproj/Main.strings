@@ -6,7 +6,7 @@
 "BrN-Mg-ekP.normalTitle" = "Add";
 
 /* Class = "UILabel"; text = "Add Player"; ObjectID = "PCL-mf-IZX"; */
-"PCL-mf-IZX.text" = "  Spelare";
+"PCL-mf-IZX.text" = "   Spelare";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "V5p-Fw-QQK"; */
 "V5p-Fw-QQK.normalTitle" = "Button";

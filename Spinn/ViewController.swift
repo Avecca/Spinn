@@ -17,7 +17,6 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var welcomeLbl: UILabel!
-    @IBOutlet weak var playersTitleLbl: UILabel!
     @IBOutlet weak var langbtn: UIButton!
     
 
@@ -38,6 +37,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         playerCollectionView.delegate = self
         playerCollectionView.dataSource = self
         
+        //collectionview filled from bottom
+        playerCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+
+        
         
         //if reload hide or show things again
         showCorrect()
@@ -49,10 +52,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         if Players.playerArray.isEmpty {
             
             playBtn.isHidden = true
-            playersTitleLbl.isHidden = true
+            //playersTitleLbl.isHidden = true
         } else {
             playBtn.isHidden = false
-            playersTitleLbl.isHidden = false
+            //playersTitleLbl.isHidden = false
             
         }
     }
@@ -106,7 +109,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         addPlayerTxtField.becomeFirstResponder()
         
         //When adding players make certain things available
-        playersTitleLbl.isHidden = false
+        //playersTitleLbl.isHidden = false
         addPlayerTxtField.isHidden = false
         playerCollectionView.flashScrollIndicators()
     }
@@ -150,10 +153,15 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         let cell = playerCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlayerCollectionViewCell
         let cellIndex = indexPath.item
         
+        print(Players.playerArray.count)
+
         cell.nameLbl.text = Players.playerArray[cellIndex].getName() //super.players.playerArray[cellIndex].getName()
         
         cell.deleteBtn.isHidden = false
         cell.deleteBtn.tag = cellIndex
+        
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+
         
         
         return cell
@@ -212,6 +220,14 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
             addPlayerTxtField.backgroundColor = .white
             //reload the view to reflect changes
             self.playerCollectionView.reloadData()
+            
+            if Players.playerArray.count > 0 {
+                self.playerCollectionView.scrollToItem(at: //scroll collection view to indexpath
+                    NSIndexPath.init(row:(self.playerCollectionView?.numberOfItems(inSection: 0))!-1, //get last item of self collectionview (number of items -1)
+                        section: 0) as IndexPath //scroll to bottom of current section
+                    , at: UICollectionView.ScrollPosition.bottom, //right, left, top, bottom, centeredHorizontally, centeredVertically
+                    animated: true)
+            }
         }
         return true
     }
