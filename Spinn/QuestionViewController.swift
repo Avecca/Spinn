@@ -60,6 +60,11 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
   
     }
     
+    //Hides the status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func changesOnSubjectChoosen() {
         //Set the background to the topics color
         view.backgroundColor = recievingColor

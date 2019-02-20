@@ -22,11 +22,13 @@ class StylingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-    
         addBackgroundStyling()
-        
-        
+   
+    }
+    
+    //Hides the status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     

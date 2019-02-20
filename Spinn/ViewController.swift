@@ -216,6 +216,25 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                         if let player = addPlayerTxtField.text {
                             editPlayers.addPlayer(name: player)
                                 //Players.playerArray.append(Player(player))
+                            
+                            
+                            //player added so update the
+                            addPlayerTxtField.resignFirstResponder()
+                            addPlayerTxtField.text = nil
+                            addPlayerTxtField.backgroundColor = .white
+                            //reload the view to reflect changes
+                            self.playerCollectionView.reloadData()
+                            
+                            //scroll latest addition
+                            if Players.playerArray.count > 0 {
+                                self.playerCollectionView.scrollToItem(at: //scroll collection view to indexpath
+                                    NSIndexPath.init(row:(self.playerCollectionView?.numberOfItems(inSection: 0))!-1, //get last item of self collectionview (number of items -1)
+                                        section: 0) as IndexPath //scroll to bottom of current section
+                                    , at: UICollectionView.ScrollPosition.bottom, //right, left, top, bottom, centeredHorizontally, centeredVertically
+                                    animated: true)
+                            }
+                            
+                            
                         }
                     } else {
                         //popup if trying to add duplicate name
@@ -223,21 +242,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                     }
 
             
-            //TODO lägga in i ifsatsen?
-            addPlayerTxtField.resignFirstResponder()
-            addPlayerTxtField.text = nil
-            addPlayerTxtField.backgroundColor = .white
-            //reload the view to reflect changes
-            self.playerCollectionView.reloadData()
-            
-            //scroll latest addition
-            if Players.playerArray.count > 0 {
-                self.playerCollectionView.scrollToItem(at: //scroll collection view to indexpath
-                    NSIndexPath.init(row:(self.playerCollectionView?.numberOfItems(inSection: 0))!-1, //get last item of self collectionview (number of items -1)
-                        section: 0) as IndexPath //scroll to bottom of current section
-                    , at: UICollectionView.ScrollPosition.bottom, //right, left, top, bottom, centeredHorizontally, centeredVertically
-                    animated: true)
-            }
+
         }
         return true
     }

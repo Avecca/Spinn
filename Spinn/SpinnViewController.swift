@@ -86,6 +86,11 @@ class SpinnViewController: UIViewController {
         
     }
     
+    //Hides the status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
    //btn changes on page load
     func changesOnSubjectChoosen() {
         
@@ -176,6 +181,7 @@ class SpinnViewController: UIViewController {
         self.truthBtn.isHidden = false
         self.dareBtn.isHidden = false
         self.orBtn.isHidden = false
+        
         self.spinnImgBtn.isEnabled = true
         self.spinnBtn.isEnabled = true
         
