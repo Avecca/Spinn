@@ -23,13 +23,15 @@
 "physical_topic" = "Fysiskt";
 "psyche_topic" = "Mentalt";
 "oppsies_topic" = "Pinsamt";
+"duplicate_name" = "Dubblerat namn";
+"duplicate_name_message" = "Det namnet används redan, använd ett unikt namn.";
 
 //friendship truths
 "friendship_topic_truth_1" = "Har du någonsin låtit en vän ta skulden för något du gjort?" ;
 "friendship_topic_truth_2" = "Vad är något som dom flesta av dina vänner vet om dig som är helt fel?";
 "friendship_topic_truth_3" = "Vad har du ljugit om som skadat en vän?";
 "friendship_topic_truth_4" = "Vad är det elakaste du gjort mot en vän som inte förtjänande det?";
-"friendship_topic_truth_5" = "Vilken hemlighet betrodde du en vän som dom sen spred vidare till andra";
+"friendship_topic_truth_5" = "Vilken hemlighet betrodde du en vän som dom sen spred vidare till andra?";
 "friendship_topic_truth_6" = "Vad är det dummaste du gjort med en vän?";
 "friendship_topic_truth_7" = "Vad är det elakaste skämtet du spelat någon?";
 "friendship_topic_truth_8" = "Vilket är det skämmigaste smeknanmnet du haft?";
@@ -62,7 +64,7 @@
 "romance_topic_dare_1" = "Förför en person i gruppen som är av samma kön som du.";
 "romance_topic_dare_2" = "Välj en person i gruppen som ger dig smisk.";
 "romance_topic_dare_3" = "Kyss personen som sitter till ditt vänster.";
-"romance_topic_dare_4" = "Byt käder med person i gruppen som är av motsatt kön i 3 rundor.";
+"romance_topic_dare_4" = "Byt kläder med person i gruppen som är av motsatt kön i 3 rundor.";
 "romance_topic_dare_5" = "Ring din förälskelse och berätta om en sak du tycker om hos dom.";
 "romance_topic_dare_6" = "Smsa din förälskelse ett kort på ditt lillfinger.";
 "romance_topic_dare_7" = "Berätta under 30 sekunder för en person här vad du beundrar hos dom.";
@@ -115,7 +117,7 @@
 "physical_topic_dare_6" = "Hitta en person vars förnamn börjar på samma bokstav som ditt eller närmast bokstav jämnfört med ditt. Slicka deras ansikte.";
 "physical_topic_dare_7" = "Stoppa 4 isbitar i dina byxor.";
 "physical_topic_dare_8" = "Tänk på en sak i ditt rum. Bokstavera saken med din näsa och fortsätt tills någon i gruppen har gissat rätt sak.";
-"physical_topic_dare_9" = "Gör en grimas och behåll den i 2 minuter medans spelet fortsätter.";
+"physical_topic_dare_9" = "Gör en grimas som betygsätts och behåll den sen i 2 minuter medans spelet fortsätter.";
 "physical_topic_dare_10" = "Dansa till en sång som gruppen väljer.";
 
 
@@ -134,13 +136,13 @@
 "psyche_topic_dare_1" = "AEfter att gruppen valt ett fult ord ska du sjunga en sång och ha med det ordet i varje mening.";
 "psyche_topic_dare_2" = "Posta en hemsk bild av dig själv till valfri social media.";
 "psyche_topic_dare_3" = "Välj en person från gruppen som ska smiska dig.";
-"psyche_topic_dare_4" = "Var någons husdjur i 5 minuter.";
+"psyche_topic_dare_4" = "Var någons entuisiastiska husdjur i en minuter.";
 "psyche_topic_dare_5" = "Låtsas vara mat, du får inte låtsas äta den, du är maten! Fortsätt med detta tills att någon i rummet lyckats gissa vad det är för mat.";
 "psyche_topic_dare_6" = "Låtsas vara personen till din vänster och ha en konversation med dennas mamma.";
 "psyche_topic_dare_7" = "Låtsas vara av det motsatta könet och flörta med personen på mitt emot dig.";
-"psyche_topic_dare_8" = "Under de nästa 2 rundorna ska du låtsas vara 5 år igen."; 
-"psyche_topic_dare_9" = "Under det nästa 3 rundorna, låtsas vara en katolsk körgosse.";
-"psyche_topic_dare_10" = "Under de nästa 3 rundorna, låtsas vara din egen mamma.";
+"psyche_topic_dare_8" = "Låtsas vara 5 år igen och berätta en läskig historia från din barndom.";
+"psyche_topic_dare_9" = "Låtsas vara en katolsk körgosse och berätta för gruppen vad du har för tro.";
+"psyche_topic_dare_10" = "Låtsas vara din egen mamma och berätta vad hon tycker om dig.";
 
 
 //oppsies truths

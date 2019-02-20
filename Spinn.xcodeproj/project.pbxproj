@@ -122,6 +122,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9335A45E221D6B74009689F8 /* CVCells */ = {
+			isa = PBXGroup;
+			children = (
+				93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */,
+				932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */,
+				93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */,
+				935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */,
+			);
+			path = CVCells;
+			sourceTree = "<group>";
+		};
+		9335A45F221D6BE9009689F8 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				9358BB85221C6F8F0061BDA3 /* RoundedButtons.swift */,
+				932D74DD2207A7920007A8C4 /* ButtonExtension.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
+		9335A460221D6C0E009689F8 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				932D74E12207D5C10007A8C4 /* EditPlayers.swift */,
+				93F592C22219F3AD0031A27B /* Language.swift */,
+				93F592C02219F34B0031A27B /* LangExtension.swift */,
+				9316E8CD2218C28C003BCC95 /* Localizable.strings */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		9335A461221D6C32009689F8 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				9377CD47220CA13900DE0400 /* Player.swift */,
+				939A1258221B522B00BE7BF0 /* Players.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
 		937273B521F0E7DB0011AC85 = {
 			isa = PBXGroup;
 			children = (
@@ -146,31 +186,23 @@
 		937273C021F0E7DB0011AC85 /* Spinn */ = {
 			isa = PBXGroup;
 			children = (
+				9335A461221D6C32009689F8 /* Players */,
+				9335A460221D6C0E009689F8 /* Language */,
+				9335A45F221D6BE9009689F8 /* Styling */,
+				9335A45E221D6B74009689F8 /* CVCells */,
 				939A1251221B4A0200BE7BF0 /* images */,
 				937273C121F0E7DB0011AC85 /* AppDelegate.swift */,
 				937273C321F0E7DB0011AC85 /* ViewController.swift */,
 				937273C521F0E7DB0011AC85 /* Main.storyboard */,
 				9358BB87221C9DEA0061BDA3 /* Spinn.swift */,
-				9358BB85221C6F8F0061BDA3 /* RoundedButtons.swift */,
-				932206DE2217236A00BB020C /* ScoreCollectionViewCell.swift */,
-				93F7C0EF2214F4D100624871 /* QuestionCollectionViewCell.swift */,
 				93FEBF3B2208CE2100977C28 /* ScoreViewController.swift */,
 				93B00C2521FB5C0B000171AA /* SubjectViewController.swift */,
 				932D74DF2207B8580007A8C4 /* SpinnViewController.swift */,
 				93FEBF3922088AE800977C28 /* QuestionViewController.swift */,
-				932D74DD2207A7920007A8C4 /* ButtonExtension.swift */,
-				93F592C02219F34B0031A27B /* LangExtension.swift */,
-				93F592C22219F3AD0031A27B /* Language.swift */,
-				932D74E12207D5C10007A8C4 /* EditPlayers.swift */,
-				93B00C2321FB49C2000171AA /* SubjectCollectionViewCell.swift */,
-				935AD508220DA5DB002F4012 /* PlayerCollectionViewCell.swift */,
 				937273C821F0E7DC0011AC85 /* Assets.xcassets */,
 				937273CA21F0E7DC0011AC85 /* LaunchScreen.storyboard */,
 				937273CD21F0E7DC0011AC85 /* Info.plist */,
 				931593ED220B80690006FAA2 /* StylingViewController.swift */,
-				9377CD47220CA13900DE0400 /* Player.swift */,
-				939A1258221B522B00BE7BF0 /* Players.swift */,
-				9316E8CD2218C28C003BCC95 /* Localizable.strings */,
 			);
 			path = Spinn;
 			sourceTree = "<group>";

@@ -170,15 +170,10 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         //Choose text color in the picker
         if recievingSubject?.lowercased() == "physical_topic" {//
-            
             pLbl.textColor = UIColor.white
-            
-           
         }else{
             pLbl.textColor = UIColor.black
-            
         }
-        
         
         return pLbl
     }
@@ -188,13 +183,6 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        //print("Spelare är.. \(super.players.playerArray.count)")
-        
-        //        guard Players.playerArray.count > 0  else {
-        //            print("spelare är inte > 0")
-        //            return 0
-        //        }
         
         //print("Spelare är.. \(Players.playerArray.count)")
         
@@ -211,15 +199,12 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         let cellIndex = indexPath.item
         
-//        guard super.players.playerArray.count > 0  else {
-//            return cell
-//        }
         //let name = "No\(cellIndex)"
         
         cell.nameBtn.isEnabled = true
 //        cell.nameBtn.setTitle(super.players.playerArray[cellIndex].getName(), for: .normal )
          cell.nameBtn.setTitle(Players.playerArray[cellIndex].getName(), for: .normal )
-        cell.nameBtn.setTitleColor( UIColor.blue, for: .normal)
+        cell.nameBtn.setTitleColor( recievingColor, for: .normal)
         cell.nameBtn.backgroundColor = UIColor.white
         
         cell.nameBtn.layer.cornerRadius = 10
@@ -243,14 +228,14 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             let cell = sender as! UIButton//UICollectionViewCell
 
-            let btnName =  cell.titleLabel?.text  as! String
+            let btnName =  cell.titleLabel!.text  //as! String
 
             let pointsToAdd = points[pointPicker.selectedRow(inComponent: 0)]
-            let playerNumber = cell.tag
+            //let playerNumber = cell.tag
             //print(playerNumber)
             
             //add points to player
-            editPlayers.addPlayerPoints(playerName: btnName, points: pointsToAdd)
+            editPlayers.addPlayerPoints(playerName: btnName!, points: pointsToAdd)
            
             
             //Players.playerArray[playerNumber].addingPoints(addPoints: pointsToAdd)

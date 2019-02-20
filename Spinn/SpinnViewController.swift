@@ -34,7 +34,7 @@ class SpinnViewController: UIViewController {
         super.viewDidLoad()
         
         //testBtn.text = recievingSubject
-        print("\(String(describing: recievingSubject)) spinn!")
+//        print("\(String(describing: recievingSubject)) spinn!")
         
         truthBtn.setTitle(NSLocalizedString("truth_btn", comment: ""), for: .normal)
         dareBtn.setTitle(NSLocalizedString("dare_btn", comment: ""), for: .normal)
@@ -51,7 +51,6 @@ class SpinnViewController: UIViewController {
     }
     
 
-    
     @IBAction func truthDareBtns(_ sender: Any) {
         //OBS sender: sender istället för sender: self för att få detta att funka
          performSegue(withIdentifier: segId, sender: sender)
@@ -82,18 +81,12 @@ class SpinnViewController: UIViewController {
         disableBtnsWhileSpinning()
 
         //Start spinning the arrow image button
-        self.rotateImage()
-        
-        //create a random delay to stop the spinning at
-        let delay: Float = spinn.delay()
+        spinThatArrow()
 
-        //after random delay stop the spinning
-        self.endSpinn(delay: delay)
-  
         
     }
     
-    
+   //btn changes on page load
     func changesOnSubjectChoosen() {
         
         //Set the background to the topics color
@@ -121,6 +114,27 @@ class SpinnViewController: UIViewController {
         
     }
     
+    
+//functions to spin the arrow
+    func spinThatArrow() {
+        self.rotateImage()
+        
+        //create a random delay to stop the spinning at
+        let delay: Float = spinn.delay()
+        
+        //after random delay stop the spinning
+        self.endSpinn(delay: delay)
+        
+    }
+    
+    //shake the phone and the arrow will spin
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake && spinnBtn.isEnabled {
+            print("wooohoo")
+            spinThatArrow()
+        }
+    }
+    
     //Rotate the arrow image
     func rotateImage() {
         
@@ -143,9 +157,6 @@ class SpinnViewController: UIViewController {
         self.showBtnsAfterSpinn()
         }
         
-        
-
-
     }
 
     
@@ -160,11 +171,11 @@ class SpinnViewController: UIViewController {
     
     func showBtnsAfterSpinn() {
         
+        self.truthBtn.isEnabled = true
+        self.dareBtn.isEnabled = true
         self.truthBtn.isHidden = false
         self.dareBtn.isHidden = false
         self.orBtn.isHidden = false
-        self.truthBtn.isEnabled = true
-        self.dareBtn.isEnabled = true
         self.spinnImgBtn.isEnabled = true
         self.spinnBtn.isEnabled = true
         
@@ -178,7 +189,7 @@ class SpinnViewController: UIViewController {
          if segue.identifier == segId {
             let btn = sender as! UIButton
             
-            let btnType = btn.titleLabel?.text as! String
+            let btnType = btn.titleLabel!.text //as! String
         
            // print("prepare  \(btnType) is not nil")
             
@@ -192,7 +203,7 @@ class SpinnViewController: UIViewController {
             } else if btnType == sweTruth {
                 destinationVC.recievingType = "truth"
             } else {
-                destinationVC.recievingType = btnType.lowercased()
+                destinationVC.recievingType = btnType!.lowercased()
             }
             
             destinationVC.recievingColor = self.recievingColor

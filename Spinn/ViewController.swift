@@ -13,6 +13,9 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     let segueId = "segueToSubjectId"
     private let editPlayers = EditPlayers()
     
+    let alert = UIAlertController(title: NSLocalizedString("duplicate_name", comment: ""), message: NSLocalizedString("duplicate_name_message", comment: "") , preferredStyle: .actionSheet)
+    
+    
     @IBOutlet weak var addPlayerTxtField: UITextField!
     @IBOutlet weak var playerCollectionView: UICollectionView!
     @IBOutlet weak var playBtn: UIButton!
@@ -40,7 +43,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         //collectionview filled from bottom
         playerCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
 
-        
+        //initialize alert msg
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        //alert.view.text
+        //alert.
         
         //if reload hide or show things again
         showCorrect()
@@ -152,8 +158,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = playerCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlayerCollectionViewCell
         let cellIndex = indexPath.item
-        
-        print(Players.playerArray.count)
+
 
         cell.nameLbl.text = Players.playerArray[cellIndex].getName() //super.players.playerArray[cellIndex].getName()
         
@@ -213,9 +218,12 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                                 //Players.playerArray.append(Player(player))
                         }
                     } else {
-                        //TODO POPUP KANSSKE?
+                        //popup if trying to add duplicate name
+                        self.present(alert,animated: true)
                     }
 
+            
+            //TODO lägga in i ifsatsen?
             addPlayerTxtField.resignFirstResponder()
             addPlayerTxtField.text = nil
             addPlayerTxtField.backgroundColor = .white
@@ -238,9 +246,8 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     //segue to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //print("Override händer med \(super.players.playerArray.count) players")
-        print("Override händer med \(Players.playerArray.count) players")
+
+        //print("Override händer med \(Players.playerArray.count) players")
         
         let destinationVC = segue.destination as! SubjectViewController
         destinationVC.recievingName = nil

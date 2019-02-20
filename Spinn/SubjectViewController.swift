@@ -111,7 +111,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     }
     //unwind segue
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        print("Tillbaka till SubjectVC")
+        //print("Tillbaka till SubjectVC")
         
        //From ScoreViewController, sets recievingname
     }

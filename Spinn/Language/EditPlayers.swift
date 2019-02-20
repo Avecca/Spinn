@@ -24,6 +24,8 @@ struct EditPlayers {
     
     func addPlayer(name: String)  { //
 
+        
+        //TODO dubbelkolla, kanske görs 2 ggr
         if( !Players.playerArray.contains(where: { $0.getName()  == name})) {
            // print("Adding player with name \(name)")
             Players.playerArray.append(Player(name))
@@ -46,14 +48,6 @@ struct EditPlayers {
     }
 
     func removePlayer(index: Int) {
-        //        if let i = playerArray.firstIndex(where: { $0.getName() == playerName}) {
-        //
-        //            playerArray.remove(at: i)
-        //        }
-
-//        for item in Players.playerArray {
-//            print(item)
-//        }
 
         Players.playerArray.remove(at: index)
         //print("player removed!")
@@ -63,9 +57,9 @@ struct EditPlayers {
     func nilPlayerArray()  {
         Players.playerArray.removeAll()
 
-        if Players.playerArray.isEmpty {
-            print("Arreyen är nollad")
-        }
+//        if Players.playerArray.isEmpty {
+//            print("Arreyen är nollad")
+//        }
 
     }
     

@@ -23,6 +23,9 @@
 "physical_topic" = "Physical";
 "psyche_topic" = "Psyche";
 "oppsies_topic" = "Cringe";
+"duplicate_name" = "Duplicate name";
+"duplicate_name_message" = "That name is already used, add a unique name.";
+
 
 //friendship truths
 "friendship_topic_truth_1" = "Have you ever let a friend take the blame for something you did?" ;
@@ -115,7 +118,7 @@
 "physical_topic_dare_6" = "Find the person whose first name has the same letter as your first name or whoever’s first name’s first letter is closest to yours. Now lick their face.";
 "physical_topic_dare_7" = "Put 4 ice cubes down your pants.";
 "physical_topic_dare_8" = "Imagine something in your room. Now spell it with your nose and keep spelling it with your nose until someone from the group guesses what you are trying spell.";
-"physical_topic_dare_9" = "Make a funny face and keep making it for 2 minutes while the game continues.";
+"physical_topic_dare_9" = "Make a funny face for people to rate and keep making it for 2 minutes while the game continues.";
 "physical_topic_dare_10" = "Dance to a song of the group’s choosing.";
 
 
@@ -134,13 +137,13 @@
 "psyche_topic_dare_1" = "After the group chooses one rude word, sing a song and insert that rude word once into every line of the song.";
 "psyche_topic_dare_2" = "Post an extremely unflattering picture of yourself to the social media outlet of your choosing.";
 "psyche_topic_dare_3" = "Choose a person from the group to give you a spanking.";
-"psyche_topic_dare_4" = "Be someone’s pet for the next 5 minutes.";
+"psyche_topic_dare_4" = "Act like someone’s enthust pet for the next minute.";
 "psyche_topic_dare_5" = "No talking. Pretend to be a food. Don’t pretend to eat the food, pretend to be the food. Keep pretending until someone in the group guesses the food you are.";
 "psyche_topic_dare_6" = "Pretend to be the person on your left and pretend to have a conversation with their mother.";
 "psyche_topic_dare_7" = "Pretend to be the opposit sex and flirt with the person opposit you.";
-"psyche_topic_dare_8" = "For the next 2 rounds pretend to be 5 again.";
-"psyche_topic_dare_9" = "For the next 3 rounds you pretend to be a catholic choirboy.";
-"psyche_topic_dare_10" = "For the next 3 rounds pretend to be your mother.";
+"psyche_topic_dare_8" = "Pretend to be 5 again and tell a scary story from your childhood.";
+"psyche_topic_dare_9" = "Pretend to be a catholic choirboy and tell the group what you believe in.";
+"psyche_topic_dare_10" = "Pretend to be your own mother and tell the group what she thinks of you.";
 
 
 //oppsies truths
