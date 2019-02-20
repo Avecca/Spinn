@@ -39,6 +39,9 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         //If not second time here
         topicLbl.text = NSLocalizedString("choose_topic_lbl", comment: "")
         
+        //collectionview filled from bottom
+        subjectCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+        
 
     }
     
@@ -69,6 +72,10 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         //cell.accessibilityIdentifier = subjectArray[cellIndex]
         //print("\(cell.tag) as tag")
        // print("\(cell.accessibilityIdentifier)")
+        
+        
+        //not upside down
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         return cell
         
         

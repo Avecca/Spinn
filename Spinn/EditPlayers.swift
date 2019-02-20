@@ -13,6 +13,7 @@ struct EditPlayers {
     //var player: Player?
     static var playerArray: [Player] = []
     // static var playersTestArray : [Player] = []// = GamePlay()
+    //var reverseArray: [Player] = []
     
 //    init(){
 //        playerArray = []
@@ -66,6 +67,22 @@ struct EditPlayers {
             print("Arreyen är nollad")
         }
 
+    }
+    
+    
+   func orderPlayerArray()  {
+        
+        
+        Players.orderedArray.removeAll()
+        
+        Players.orderedArray = Players.playerArray
+        
+//        for i in Players.playerArray {
+//            print(i)
+//        }
+    
+        Players.orderedArray.sort(by: { $0.getPoints() > $1.getPoints() })
+        
     }
     
     

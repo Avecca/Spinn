@@ -15,7 +15,7 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
     let segId = "unwindToSubjectViewId"
     let segToStartId = "unwindToStartId"
     var recievingName : String?
-    var orderedList : [Player] = []
+    //var orderedList : [Player] = []
     private let editPlayers = EditPlayers()
     
     @IBOutlet weak var nextBtnPressed: UIButton!
@@ -29,13 +29,15 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
         scoreConnectionView.delegate = self
         scoreConnectionView.dataSource = self
         
-        //Create Array ordered after points for the players
-        orderedList = Players.playerArray
-        orderedList.sort(by: { $0.getPoints() > $1.getPoints() })
+        //Create Array ordered after points for the players, that is used to fill the collectionView
+        editPlayers.orderPlayerArray() 
+        
         
         //TODO FIXA NAMNET
-        nextBtnPressed.setTitle(NSLocalizedString("next_btn", comment: "T##String"), for: .normal)
+        nextBtnPressed.setTitle(NSLocalizedString("next_btn", comment: ""), for: .normal)
         quitBtn.setTitle(NSLocalizedString("quit_btn", comment: ""), for: .normal)
+        
+
         
 //        for i in orderedList {
 //            print("ordered  \(i)")
@@ -52,7 +54,7 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
     //collectionview delegate and datascource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return orderedList.count
+        return Players.orderedArray.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -64,16 +66,17 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScoreCollectionViewCell
         let cellIndex = indexPath.item
         
-        cell.nameLbl.text = orderedList[cellIndex].getName()
-        cell.scoreLbl.text = "\(orderedList[cellIndex].getPoints()) \(NSLocalizedString("score_pts", comment: "")) "
+        cell.nameLbl.text = Players.orderedArray[cellIndex].getName()
+        cell.scoreLbl.text = "\(Players.orderedArray[cellIndex].getPoints()) \(NSLocalizedString("score_pts", comment: "")) "
         cell.nameLbl.tag = cellIndex
         cell.scoreLbl.tag = cellIndex
         
-        if orderedList[cellIndex].getName() == recievingName {
+        if Players.orderedArray[cellIndex].getName() == recievingName {
             cell.nameLbl.textColor = .white
             cell.scoreLbl.textColor = .white
         }
         
+       
         return cell
     }
     

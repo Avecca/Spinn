@@ -160,6 +160,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         cell.deleteBtn.isHidden = false
         cell.deleteBtn.tag = cellIndex
         
+        //Make sure the names arnt upside down since we reversed the order of the cv
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
 
         
@@ -221,6 +222,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
             //reload the view to reflect changes
             self.playerCollectionView.reloadData()
             
+            //scroll latest addition
             if Players.playerArray.count > 0 {
                 self.playerCollectionView.scrollToItem(at: //scroll collection view to indexpath
                     NSIndexPath.init(row:(self.playerCollectionView?.numberOfItems(inSection: 0))!-1, //get last item of self collectionview (number of items -1)

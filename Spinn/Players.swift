@@ -12,5 +12,6 @@ import Foundation
 struct Players {
     
     static var playerArray: [Player] = []
+    static var orderedArray: [Player] = []
     
 }
