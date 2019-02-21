@@ -99,7 +99,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 nil:
             rateLbl.text = NSLocalizedString("rate_truth", comment: "")
         case "dare":
-            rateLbl.text = NSLocalizedString("dare_truth", comment: "")
+            rateLbl.text = NSLocalizedString("rate_dare", comment: "")
         default:
             rateLbl.text = NSLocalizedString("rate_truth", comment: "")
         }

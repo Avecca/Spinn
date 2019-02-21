@@ -23,7 +23,8 @@ class StylingViewController: UIViewController {
         super.viewDidLoad()
         
         addBackgroundStyling()
-   
+//        UIApplication.shared.statusBarView?.backgroundColor = .red
+
     }
     
     //Hides the status bar

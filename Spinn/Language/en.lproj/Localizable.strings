@@ -25,8 +25,8 @@
 "oppsies_topic" = "Cringe";
 "duplicate_name" = "Duplicate name";
 "duplicate_name_message" = "That name is already used, add a unique name.";
-"rate_truth" = "Rate truth";
-"rate_dare" = "Rate dare";
+"rate_truth" = "Rate their truth";
+"rate_dare" = "Rate their dare";
 "rate_player" = "For";
 
 
@@ -123,7 +123,6 @@
 "physical_topic_dare_8" = "Imagine something in your room. Now spell it with your nose and keep spelling it with your nose until someone from the group guesses what you are trying spell.";
 "physical_topic_dare_9" = "Make a funny face for people to rate and keep making it for 2 minutes while the game continues.";
 "physical_topic_dare_10" = "Dance to a song of the group’s choosing.";
-
 
 //psyche truths
 "psyche_topic_truth_1" = "What are you most self-conscious about?";
