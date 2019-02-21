@@ -10,8 +10,8 @@ import UIKit
 
 class StylingViewController: UIViewController {
     
-    let bgColor = #colorLiteral(red: 0.6305440068, green: 0.8406034112, blue: 0.5077832937, alpha: 1)
-    let bgColor2 = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+    //let bgColor = #colorLiteral(red: 0.6305440068, green: 0.8406034112, blue: 0.5077832937, alpha: 1)
+   // let bgColor2 = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
     let bgGold = UIColor(red: 255/255, green: 215/255, blue: 0, alpha: 1) //rgb(255,215,0)
     let layer = CAGradientLayer()
    // static var playersTestArray : [Player] = []// = GamePlay()
@@ -23,8 +23,6 @@ class StylingViewController: UIViewController {
         super.viewDidLoad()
         
         addBackgroundStyling()
-//        UIApplication.shared.statusBarView?.backgroundColor = .red
-
     }
     
     //Hides the status bar
@@ -46,34 +44,17 @@ class StylingViewController: UIViewController {
         //IF backgrouund color make sure the layer is underneath all other elements
         self.view.layer.insertSublayer(layer, at: 0)
         
-       
-        
-        //Picture background
+  
+    }
+    
+}
+
+
+//Picture background
 //        let bgImg = UIImageView(frame: UIScreen.main.bounds)
 //        bgImg.image = UIImage(named: "YSparkle")
 //        bgImg.contentMode = UIView.ContentMode.scaleAspectFill
 //        self.view.insertSubview(bgImg, at: 0)
- 
-        
-        //view.backgroundColor = bgGold
-        
-        
-    }
-    
-//    func addPlayer(name: String)  {
-//        
-//        if( !GamePlay.playerArray.contains(where: { $0.getName()  == name})) {
-//            print("Adding player with name \(name)")
-//            GamePlay.playerArray.append(Player(name))
-//        } else {
-//        }
-//        
-//        for player in GamePlay.playerArray {
-//            print(player.getName())
-//        }
-//        
-//    }
-    
 
 
-}
+//view.backgroundColor = bgGold

@@ -27,7 +27,11 @@
 "duplicate_name_message" = "That name is already used, add a unique name.";
 "rate_truth" = "Rate their truth";
 "rate_dare" = "Rate their dare";
-"rate_player" = "For";
+"rate_player" = "Add points to";
+"rate" = "Rate players effort";
+"rate_instructions" = " 1) The player the arrow pointed to answers the question. \n2) Either the previous player to answer rates the the answer or the group does. \n3) Choose which player answered to assign the points to.";
+"spin_arrow" = "Spin the arrow!";
+"spin_arrow_instructions" = " 1) Spin the arrow until it points to a person. \n2) Have the person it points to choose Truth or Dare.";
 
 
 //friendship truths

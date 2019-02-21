@@ -11,7 +11,6 @@ import UIKit
 class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UICollectionViewDelegate,UICollectionViewDataSource {
 
 
-    
     var recievingSubject: String?
     var recievingType: String?
     var recievingColor : UIColor?
@@ -26,20 +25,18 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     private let points = [0,1,2,3,4,5]
     
+    let alert = UIAlertController(title: NSLocalizedString("rate", comment: ""), message: NSLocalizedString("rate_instructions", comment: "") , preferredStyle: .alert)
+    
     let segId = "segueToScoreId" //"placeholderSegueToScoreId"
     @IBOutlet weak var dareQuestionLbl: UILabel!
     @IBOutlet weak var pointPicker: UIPickerView!
     @IBOutlet weak var rateLbl: UILabel!
     @IBOutlet weak var forLbl: UILabel!
     @IBOutlet weak var  collectionView : UICollectionView!
-    
-    
-    
-    
+    @IBOutlet weak var instructBtn: MyRoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         //fetch the question/dare
         dareQuestionLbl.text = NSLocalizedString(dareQuestionPicker(), comment: "")
@@ -49,19 +46,16 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let defaultPointValue = points.count / 2
         pointPicker.selectRow(defaultPointValue, inComponent: 0, animated: false)
 
-        // Make pointpicker horizontal
-        pVLayout()
-        
         //delegate and datasource for picker
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        //initialize alert msg
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
         //changes based on background color
         changesOnSubjectChoosen()
-        
-        //layout for collectionview
-        cvLayout()
-  
+
     }
     
     //Hides the status bar
@@ -69,6 +63,19 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return true
     }
     
+    //Need the viewLoad to happen before we get the size of the frame
+    override func viewDidLayoutSubviews() {
+        //layout for collectionview
+        cvLayout()
+        // Make pointpicker horizontal
+        pVLayout()
+
+    }
+    
+    @IBAction func instructBtnPressed(_ sender: Any) {
+        self.present(alert,animated: true)
+        
+    }
     // Make pointpicker horizontal
     func pVLayout() {
         
@@ -80,8 +87,9 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pointPicker.transform = CGAffineTransform(rotationAngle: rotAngle) //radiant angle
         
         //where to position the pv
-        pointPicker.frame = CGRect(x: -200, y: w, width: view.frame.width + 400, height: 100)  //100 is the height of the original pv from storyboard
+        pointPicker.frame = CGRect(x: -100, y: w, width: (view.frame.width + 200), height: 60)  //100 is the height of the original pv from storyboard
         //wont be all the way to the edge so can add 100ish to stretch it on each side (x -100, y +100 so + 200 on width
+    
     }
     
     func changesOnSubjectChoosen() {
@@ -91,6 +99,9 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if recievingSubject == "physical_topic" {//
             dareQuestionLbl.textColor = .white
             rateLbl.textColor = .white
+            instructBtn.layer.borderColor = UIColor.red.cgColor
+        } else if recievingSubject == "romance_topic" {
+            instructBtn.setTitleColor(UIColor.black, for: .normal)
         }
         
         switch recievingType?.lowercased() {
@@ -106,9 +117,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         forLbl.text = NSLocalizedString("rate_player", comment: "")
         
-        
     }
-    
     
     func cvLayout()  {
         let width = (view.frame.size.width)
@@ -125,9 +134,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         //collectionview filled from bottom
 //        collectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
         
-        
     }
-    
     
     //fetch the question/dare
     func dareQuestionPicker() -> String {
@@ -152,16 +159,12 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
             truthDareString += defaultType
         }
         
-        
         truthDareString += "_\(rdm)"
         
         //        let truthDareString = "\(recievingSubject! ?? "oppsies_topic")_\(recievingType! ?? "truth")_\(rdm)"
         
-        
         return truthDareString
-        //"\(recievingSubject ?? "Romance") : \(recievingType ?? "Truth") : Have you ever peed in the pool?"
     }
-    
     
     //Pickerview Delegate and datasource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -174,32 +177,11 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return points.count
     }
     
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//
-//        let pointValues = points[row]
-//
-//        return "\(pointValues) \(NSLocalizedString("pts", comment: ""))"
-//    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         collectionView.flashScrollIndicators()
     }
-//
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//
-//
-//        //Choose text color in the picker
-//        if recievingSubject?.lowercased() == "physical_topic" {//
-//
-//            let textWithColor = NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor :
-//            UIColor.white])
-//            return textWithColor
-//        }
-//
-//
-//       return  NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))" , attributes: [NSAttributedString.Key.foregroundColor :
-//            UIColor.black])
-//    }
+
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pLbl = UILabel()
@@ -225,8 +207,6 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     
     //collectionView delegare and datasource
-
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         //print("Spelare är.. \(Players.playerArray.count)")
@@ -248,7 +228,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         cell.nameBtn.isEnabled = true
 //        cell.nameBtn.setTitle(super.players.playerArray[cellIndex].getName(), for: .normal )
-         cell.nameBtn.setTitle(Players.playerArray[cellIndex].getName(), for: .normal )
+        cell.nameBtn.setTitle(Players.playerArray[cellIndex].getName(), for: .normal )
         cell.nameBtn.setTitleColor( recievingColor, for: .normal)
         cell.nameBtn.backgroundColor = UIColor.white
         
@@ -295,3 +275,28 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
 }
+
+
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        let pointValues = points[row]
+//
+//        return "\(pointValues) \(NSLocalizedString("pts", comment: ""))"
+//    }
+
+//
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//
+//
+//        //Choose text color in the picker
+//        if recievingSubject?.lowercased() == "physical_topic" {//
+//
+//            let textWithColor = NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))", attributes: [NSAttributedString.Key.foregroundColor :
+//            UIColor.white])
+//            return textWithColor
+//        }
+//
+//
+//       return  NSAttributedString(string: "\(String(points[row])) \(NSLocalizedString("pts", comment: ""))" , attributes: [NSAttributedString.Key.foregroundColor :
+//            UIColor.black])
+//    }

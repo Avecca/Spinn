@@ -26,11 +26,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         welcomeLbl.text = NSLocalizedString("welcome_description", comment: "")
         playBtn.setTitle(NSLocalizedString("play_button", comment: ""), for: .normal)
         
-        //delegaten för textfielden
+        //delegate for textfielden
         addPlayerTxtField.delegate = self
         addPlayerTxtField.backgroundColor = .white
         addPlayerTxtField.borderStyle = .none
@@ -40,8 +39,8 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         playerCollectionView.delegate = self
         playerCollectionView.dataSource = self
         
-        //collectionview filled from bottom
-        playerCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+//        //collectionview filled from bottom
+//        playerCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
 
         //initialize alert msg
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -54,19 +53,10 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     }
     
     
-    func showCorrect()   {
-        if Players.playerArray.isEmpty {
-            
-            playBtn.isHidden = true
-            //playersTitleLbl.isHidden = true
-        } else {
-            playBtn.isHidden = false
-            //playersTitleLbl.isHidden = false
-            
-        }
+    override func viewDidLayoutSubviews() {
+        //collectionview filled from bottom
+        playerCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
     }
-    
-
 
     @IBAction func langBtnPressed(_ sender: Any) {
         //print(Locale.current.languageCode!)
@@ -90,7 +80,6 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     
     @IBAction func deletePlayerButtonPressed(_ sender: UIButton) {
         //print("Delete btn pressed!!")
-        
         let index = sender.tag  //TODO check how to check this in if let
         
         //remove Player from the list
@@ -109,7 +98,6 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
     }
     
  
-    
     @IBAction func addPlayer(_ sender: Any) { //pressed
         //when clicking add, activate the textfield
         addPlayerTxtField.becomeFirstResponder()
@@ -120,6 +108,15 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         playerCollectionView.flashScrollIndicators()
     }
     
+    func showCorrect()   {
+        if Players.playerArray.isEmpty {
+            playBtn.isHidden = true
+            //playersTitleLbl.isHidden = true
+        } else {
+            playBtn.isHidden = false
+            //playersTitleLbl.isHidden = false
+        }
+    }
     
     
     //switch between the 2 predefined languages
@@ -133,7 +130,7 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                 //default engelska
                 Bundle.set(language: Language.english)
             }
-            // Bundle.set(language: swi)
+            // Bundle.set(language: swe)
             
             
             //reload the viewcontroller to reflect the changes
@@ -159,23 +156,17 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         let cell = playerCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlayerCollectionViewCell
         let cellIndex = indexPath.item
 
-
-        cell.nameLbl.text = Players.playerArray[cellIndex].getName() //super.players.playerArray[cellIndex].getName()
-        
+        cell.nameLbl.text = Players.playerArray[cellIndex].getName()
         cell.deleteBtn.isHidden = false
         cell.deleteBtn.tag = cellIndex
         
         //Make sure the names arnt upside down since we reversed the order of the cv
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
 
-        
-        
         return cell
     }
     
-    
-    
-        //delegat func för addPlayerTxtField
+        //delegat funcs för addPlayerTxtField
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
@@ -217,11 +208,11 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                             editPlayers.addPlayer(name: player)
                                 //Players.playerArray.append(Player(player))
                             
-                            
                             //player added so update the
                             addPlayerTxtField.resignFirstResponder()
                             addPlayerTxtField.text = nil
                             addPlayerTxtField.backgroundColor = .white
+                            
                             //reload the view to reflect changes
                             self.playerCollectionView.reloadData()
                             
@@ -233,25 +224,21 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
                                     , at: UICollectionView.ScrollPosition.bottom, //right, left, top, bottom, centeredHorizontally, centeredVertically
                                     animated: true)
                             }
-                            
-                            
                         }
+                        
                     } else {
                         //popup if trying to add duplicate name
                         self.present(alert,animated: true)
                     }
 
             
-
         }
         return true
     }
     
 
-    
     //segue to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         //print("Override händer med \(Players.playerArray.count) players")
         
         let destinationVC = segue.destination as! SubjectViewController
@@ -265,7 +252,6 @@ class ViewController: StylingViewController, UITextFieldDelegate, UICollectionVi
         playBtn.isHidden = true
         
     }
-    
     
 }
 

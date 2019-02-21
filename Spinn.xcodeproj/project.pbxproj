@@ -145,7 +145,6 @@
 		9335A460221D6C0E009689F8 /* Language */ = {
 			isa = PBXGroup;
 			children = (
-				932D74E12207D5C10007A8C4 /* EditPlayers.swift */,
 				93F592C22219F3AD0031A27B /* Language.swift */,
 				93F592C02219F34B0031A27B /* LangExtension.swift */,
 				9316E8CD2218C28C003BCC95 /* Localizable.strings */,
@@ -156,6 +155,7 @@
 		9335A461221D6C32009689F8 /* Players */ = {
 			isa = PBXGroup;
 			children = (
+				932D74E12207D5C10007A8C4 /* EditPlayers.swift */,
 				9377CD47220CA13900DE0400 /* Player.swift */,
 				939A1258221B522B00BE7BF0 /* Players.swift */,
 			);

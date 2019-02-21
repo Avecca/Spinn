@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class Spinn {
@@ -15,7 +16,11 @@ class Spinn {
     
     //min and max time the arrow is spinning
     let minDelay: Float = 2.5
-    let maxDelay : Float = 11 //10 seconds
+    let maxDelay : Float = 9 //8 seconds
+    
+    //sound
+    var soundPlayer: AVAudioPlayer? // = AVAudioPlayer()
+    //let arrowSound = URL(fileURLWithPath: Bundle.main.path(forResource: "arrow_sound.mp3", ofType: nil)!)
     
     //rotate a button
     func rotateImage(btn: UIButton)  {
@@ -23,7 +28,7 @@ class Spinn {
         self.finished = false
         //print("\(finished) är boolen vid starttryck")
         
-        UIView.animate( withDuration: 0.02,
+        UIView.animate( withDuration: 0.01,
                         delay: 0.0,
                         options: .curveLinear,
                         animations: {
@@ -35,7 +40,6 @@ class Spinn {
                         completion: { completed in
                             if !self.finished {
                                 //print("\(self.finished) är boolen vid completed")
-                                
                                 self.rotateImage(btn: btn)
                             }
                         }
@@ -46,14 +50,10 @@ class Spinn {
     
     //stop spinning when this function is called
     func endSpinn() {
-        
-        //print("\(delay) är doublelen")
-       // DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
-            
+
             self.finished = true
             //print("\(self.finished) är boolen")
-      
-        //}
+
     }
     
     //Random delay to stop the spinning at
@@ -61,6 +61,34 @@ class Spinn {
         
         return Float.random(in: minDelay ... maxDelay)
     }
+    
+    
+    func makeSound() {
+        if let sound = NSDataAsset(name: "arrow_sound"){
+
+            do {
+                soundPlayer = try AVAudioPlayer(data: sound.data, fileTypeHint: "mp3") //try AVAudioPlayer(contentsOf: arrowSound)
+                playOnRepeat()
+            } catch let error as NSError{
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func playOnRepeat()  {
+        soundPlayer?.numberOfLoops = -1
+        soundPlayer?.enableRate = true
+        soundPlayer?.rate = 8.0
+        
+        soundPlayer?.play()
+        
+    }
+    
+    func endSound()  {
+        soundPlayer?.stop()
+    }
+    
     
 }
 

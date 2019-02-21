@@ -15,7 +15,6 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
     let segId = "unwindToSubjectViewId"
     let segToStartId = "unwindToStartId"
     var recievingName : String?
-    //var orderedList : [Player] = []
     private let editPlayers = EditPlayers()
     
     @IBOutlet weak var nextBtnPressed: UIButton!
@@ -38,7 +37,6 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
         quitBtn.setTitle(NSLocalizedString("quit_btn", comment: ""), for: .normal)
         
 
-        
 //        for i in orderedList {
 //            print("ordered  \(i)")
 //        }
@@ -47,9 +45,6 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
 //            print("playerarray \(i)")
 //        }
     }
-    
-    
-
     
     //collectionview delegate and datascource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,7 +71,6 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
             cell.scoreLbl.textColor = .white
         }
         
-       
         return cell
     }
     
@@ -102,10 +96,8 @@ class ScoreViewController: StylingViewController, UICollectionViewDataSource, UI
             
            // print("Quitting the game")
 
-           //Remova all Players
+           //Remove all Players
            editPlayers.nilPlayerArray()
-            
-            //Players.playerArray.removeAll()
             
         }
     }

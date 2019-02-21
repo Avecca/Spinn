@@ -23,34 +23,49 @@ class SpinnViewController: UIViewController {
     let sweDare = "Konka"
     let spinn = Spinn()
     
+    let alert = UIAlertController(title: NSLocalizedString("spin_arrow", comment: ""), message: NSLocalizedString("spin_arrow_instructions", comment: "") , preferredStyle: .alert)
     
     @IBOutlet weak var truthBtn: UIButton!
     @IBOutlet weak var dareBtn: UIButton! //{
     @IBOutlet weak var orBtn: UILabel!
     @IBOutlet weak var spinnBtn: UIButton!
     @IBOutlet weak var spinnImgBtn: UIButton!
-
+    @IBOutlet weak var instructBtn: MyRoundedButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //testBtn.text = recievingSubject
-//        print("\(String(describing: recievingSubject)) spinn!")
-        
+
         truthBtn.setTitle(NSLocalizedString("truth_btn", comment: ""), for: .normal)
         dareBtn.setTitle(NSLocalizedString("dare_btn", comment: ""), for: .normal)
         
         spinnBtn.setTitle(NSLocalizedString("spinn", comment: ""), for: .normal)
         spinnBtn.titleLabel?.font = UIFont(name: btnFont, size: btnSize)
-
         
+        //initialize alert msg
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
         //changes based on background color
         changesOnSubjectChoosen()
-        
-
-        
+   
     }
     
-
+    //Hides the status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    //shake the phone and the arrow will spin
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake && spinnBtn.isEnabled {
+            //print("wooohoo")
+            spinThatArrow()
+        }
+    }
+    
+    @IBAction func instructBtnPressed(_ sender: Any) {
+        self.present(alert,animated: true)
+    }
+    
     @IBAction func truthDareBtns(_ sender: Any) {
         //OBS sender: sender istället för sender: self för att få detta att funka
          performSegue(withIdentifier: segId, sender: sender)
@@ -74,21 +89,11 @@ class SpinnViewController: UIViewController {
         spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: [] )
         spinnBtn.setTitle(NSLocalizedString("de_spinn", comment: ""), for: .normal)
         
-        //spinnBtn.titleLabel?.text = "RE SPINN"
-        
-        
         //Disable the buttons while image is spinning
         disableBtnsWhileSpinning()
 
         //Start spinning the arrow image button
         spinThatArrow()
-
-        
-    }
-    
-    //Hides the status bar
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
    //btn changes on page load
@@ -98,46 +103,36 @@ class SpinnViewController: UIViewController {
         view.backgroundColor = recievingColor
         
         if recievingSubject == "romance_topic" {
-            
             //TODO ta bort en?
             dareBtn.setTitleColor(UIColor.white, for: [] )
             dareBtn.setTitleColor(UIColor.white, for: .normal)
             dareBtn.titleLabel?.textColor = .white
+            instructBtn.setTitleColor(UIColor.black, for: .normal)
         } else {
             
             //TODO ta bort en?
             dareBtn.setTitleColor(UIColor.red, for: .normal)
             dareBtn.titleLabel?.textColor = .red
-            
         }
         
         if recievingSubject == "physical_topic" {//
             orBtn.textColor = .white
             spinnImgBtn.setImage(UIImage(named: "location_arrow_red2"), for: .normal)
-            
+            instructBtn.layer.borderColor = UIColor.red.cgColor
         }
         
     }
     
-    
-//functions to spin the arrow
+    //functions to spin the arrow
     func spinThatArrow() {
         self.rotateImage()
-        
+
         //create a random delay to stop the spinning at
         let delay: Float = spinn.delay()
         
         //after random delay stop the spinning
         self.endSpinn(delay: delay)
         
-    }
-    
-    //shake the phone and the arrow will spin
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake && spinnBtn.isEnabled {
-            print("wooohoo")
-            spinThatArrow()
-        }
     }
     
     //Rotate the arrow image
@@ -148,6 +143,9 @@ class SpinnViewController: UIViewController {
         //start spinning the mentioned btn
         spinn.rotateImage(btn: btn)
         
+        //start making a sound
+        spinn.makeSound()
+    
     }
     
 
@@ -157,6 +155,9 @@ class SpinnViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: (.now() + Double(delay))) {
             
            self.spinn.endSpinn()
+            
+            //End sound
+            self.spinn.endSound()
             
             //TODO Knapparna ska visas och enableas
         self.showBtnsAfterSpinn()
@@ -213,7 +214,6 @@ class SpinnViewController: UIViewController {
             }
             
             destinationVC.recievingColor = self.recievingColor
-            
             
         }
     }

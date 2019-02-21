@@ -12,15 +12,12 @@ struct EditPlayers {
     
     //var player: Player?
     static var playerArray: [Player] = []
-    // static var playersTestArray : [Player] = []// = GamePlay()
-    //var reverseArray: [Player] = []
     
 //    init(){
 //        playerArray = []
 //
 //    }
     
-    //var choosenSubject : String?
     
     func addPlayer(name: String)  { //
 
@@ -30,6 +27,7 @@ struct EditPlayers {
            // print("Adding player with name \(name)")
             Players.playerArray.append(Player(name))
         } else {
+            //TODO popup on view controller
         }
 
        // for player in Players.playerArray {

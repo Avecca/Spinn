@@ -17,7 +17,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
     var subjectColor : [UIColor] = [(UIColor.blue),(UIColor.red),(UIColor.purple),(UIColor.black),(UIColor.brown),(UIColor.orange)]
  
     let segId = "segueToSpinnId"
-    var subject : String?
+   // var subject : String?
 
 
     //connection mellan SubjectCollectionViewCell och här genom namnet subjectCollectionView, hittas genom connectioninspectorn på storyboardet på sidans subjectviewcontroller
@@ -33,18 +33,19 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         subjectCollectionView.delegate = self
         subjectCollectionView.dataSource = self
        // print("recieving name is \(recievingName)")
-        
-       // print("Subjectsida händer med \(Players.playerArray.count) players")
        
         //If not second time here
         topicLbl.text = NSLocalizedString("choose_topic_lbl", comment: "")
         
-        //collectionview filled from bottom
-        subjectCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
-        
-
     }
     
+    override func viewDidLayoutSubviews() {
+        //collectionview filled from bottom
+        subjectCollectionView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+    }
+    
+    
+    //collectionviews delegate and datasource functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subjectArray.count
     }
@@ -57,27 +58,20 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
         //där "cell" är nmanet jag gav till alla cell object i attribut inspektorn
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubjectCollectionViewCell
         
-        
-        
         let cellIndex = indexPath.item
         cell.subjectBtnView.isEnabled = true
        
-       cell.subjectBtnView.setTitle(NSLocalizedString(subjectArray[cellIndex], comment: ""), for: .normal)
-        //cell.subjectBtnView.setTitleColor(subjectColor[cellIndex], for: .normal)
+        cell.subjectBtnView.setTitle(NSLocalizedString(subjectArray[cellIndex], comment: ""), for: .normal)
         cell.subjectBtnView.setTitleColor((subjectColor[cellIndex]), for: .normal)
         cell.subjectBtnView.titleLabel?.font = UIFont(name: super.btnFont, size: CGFloat(super.btnSize))
         cell.subjectBtnView.layer.borderColor = (subjectColor[cellIndex]).cgColor
         cell.subjectBtnView.backgroundColor = UIColor.white
         cell.subjectBtnView.tag = cellIndex
-        //cell.accessibilityIdentifier = subjectArray[cellIndex]
-        //print("\(cell.tag) as tag")
-       // print("\(cell.accessibilityIdentifier)")
-        
-        
-        //not upside down
+ 
+        //not upside down, since i change to fill from bottom
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        return cell
         
+        return cell
         
     }
     
@@ -91,13 +85,7 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
             let cellIndex = cell.tag
             
             let selectedSubject = subjectArray[cellIndex]
-            
-            //let color = cell.currentTitleColor
-            //cell.titleLabel?.text  as! String
             let btnColor = cell.titleColor(for: .normal)
-          //  print("\(btnColor) btncolor funkar")
-         //   print("prepare  \(btnSubject) is not nil")
-           // print(selectedSubject)
             
             let destinationVC = segue.destination as! SpinnViewController
             destinationVC.recievingSubject = selectedSubject
@@ -105,22 +93,19 @@ class SubjectViewController: StylingViewController, UICollectionViewDataSource, 
             if let color = btnColor{
                 destinationVC.recievingColor = color
             }
-            
         }
         
     }
     //unwind segue
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         //print("Tillbaka till SubjectVC")
-        
        //From ScoreViewController, sets recievingname
     }
     
-
-
-
 }
 
+
+//TODO the subject strings being our of bounds is at this point intentional, fix this an other way
 
 
 

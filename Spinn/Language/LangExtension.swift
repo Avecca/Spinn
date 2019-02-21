@@ -34,7 +34,7 @@ extension Bundle {
         UserDefaults.standard.synchronize()
         
         guard let path = Bundle.main.path(forResource: language.code, ofType: "lproj") else {
-            print("Failed to get a bundle path.")
+            print("Failed to get the bundles path.")
             
             return
         }

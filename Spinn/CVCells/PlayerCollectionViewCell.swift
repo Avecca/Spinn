@@ -25,7 +25,7 @@ class PlayerCollectionViewCell: UICollectionViewCell {
 //        print(index)
         
         
-        //SKAPAR ju för tusan en ny instans utav viewcontroller
+        //SKAPAR ju för tusan en ny instans utav viewcontroller :((((
 //        let vc = ViewController()
 //        vc.deletePlayer(index: index)
   
