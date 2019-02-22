@@ -227,7 +227,7 @@ class QuestionViewController: UIViewController, UIPickerViewDataSource, UIPicker
         //let name = "No\(cellIndex)"
         
         cell.nameBtn.isEnabled = true
-//        cell.nameBtn.setTitle(super.players.playerArray[cellIndex].getName(), for: .normal )
+
         cell.nameBtn.setTitle(Players.playerArray[cellIndex].getName(), for: .normal )
         cell.nameBtn.setTitleColor( recievingColor, for: .normal)
         cell.nameBtn.backgroundColor = UIColor.white
