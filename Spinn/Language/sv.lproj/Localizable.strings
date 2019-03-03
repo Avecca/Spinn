@@ -31,7 +31,7 @@
 "rate" = "Betygsätt spelarens prestation";
 "rate_instructions" = " 1) Spelaren som pilen pekade på besvarar frågan. \n2) Antingen so betygsätter den spelare som senast svarade eller så bestämmer gruppen. \n3) Välj den spelare som svarat så poäng kan tilldelas denna.";
 "spin_arrow" = "Snurra på Pilen!";
-"spin_arrow_instructions" = " 1) Snurra på Pilens tills den pekar på en person. \n2) Personen pilen pekar på väljer mellan Sanning eller Konka.";
+"spin_arrow_instructions" = " 1) Snurra på Pilen tills den pekar på en person. \n2) Personen pilen pekar på väljer mellan Sanning eller Konka.";
 
 //friendship truths
 "friendship_topic_truth_1" = "Har du någonsin låtit en vän ta skulden för något du gjort?" ;
@@ -143,7 +143,7 @@
 "psyche_topic_dare_1" = "AEfter att gruppen valt ett fult ord ska du sjunga en sång och ha med det ordet i varje mening.";
 "psyche_topic_dare_2" = "Posta en hemsk bild av dig själv till valfri social media.";
 "psyche_topic_dare_3" = "Välj en person från gruppen som ska smiska dig.";
-"psyche_topic_dare_4" = "Var någons entuisiastiska husdjur i en minuter.";
+"psyche_topic_dare_4" = "Var någons entuisiastiska husdjur i en minut.";
 "psyche_topic_dare_5" = "Låtsas vara mat, du får inte låtsas äta den, du är maten! Fortsätt med detta tills att någon i rummet lyckats gissa vad det är för mat.";
 "psyche_topic_dare_6" = "Låtsas vara personen till din vänster och ha en konversation med dennas mamma.";
 "psyche_topic_dare_7" = "Låtsas vara av det motsatta könet och flörta med personen på mitt emot dig.";
